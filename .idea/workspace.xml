@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="esp01_1m" CONFIG_NAME="esp01_1m" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cb8ebdbc-2c30-46d0-894e-df29f7b47c7b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-esp01_1m-Z_DUMMY_TARGET" />
+  </component>
+  <component name="ProjectId" id="1ZtvhmzYCfIdLaNsf6ghyoLqbO4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="PlatformIO.PlatformIO Upload">
+    <configuration name="PlatformIO Debug" type="platformio" factoryName="PlatformIO Debug" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="Debug" CONFIG_NAME="esp01_1m" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlatformIO Upload" type="platformio" factoryName="PlatformIO Upload" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="Production" CONFIG_NAME="esp01_1m" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="Production">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PlatformIO.PlatformIO Debug" />
+      <item itemvalue="PlatformIO.PlatformIO Upload" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb8ebdbc-2c30-46d0-894e-df29f7b47c7b" name="Default Changelist" comment="" />
+      <created>1585671326682</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585671326682</updated>
+      <workItem from="1585671330189" duration="801000" />
+      <workItem from="1585672202409" duration="843000" />
+      <workItem from="1585737695178" duration="5209000" />
+      <workItem from="1585743044375" duration="199000" />
+      <workItem from="1585743254067" duration="631000" />
+      <workItem from="1585743896658" duration="3877000" />
+      <workItem from="1585750807440" duration="3662000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="451" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748600241">
+      <screen x="52" y="23" width="1868" height="1057" />
+    </state>
+    <state x="451" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748600241" />
+    <state x="454" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585672156227" />
+    <state x="730" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585753832645">
+      <screen x="58" y="23" width="1862" height="1057" />
+    </state>
+    <state x="726" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748222703" />
+    <state x="730" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585753832645" />
+    <state x="158" y="123" width="1662" height="857" key="DiffContextDialog" timestamp="1585754126624">
+      <screen x="58" y="23" width="1862" height="1057" />
+    </state>
+    <state x="158" y="123" width="1662" height="857" key="DiffContextDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585754126624" />
+    <state width="1820" height="289" key="GridCell.Tab.0.bottom" timestamp="1585755174281">
+      <screen x="58" y="23" width="1862" height="1057" />
+    </state>
+    <state width="1817" height="289" key="GridCell.Tab.0.bottom/51.23.1869.1057/1920.115.1680.1027@51.23.1869.1057" timestamp="1585740938673" />
+    <state width="1822" height="289" key="GridCell.Tab.0.bottom/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748692706" />
+    <state width="1817" height="289" key="GridCell.Tab.0.bottom/54.23.1866.1057/1920.115.1680.1027@54.23.1866.1057" timestamp="1585741326534" />
+    <state width="1822" height="289" key="GridCell.Tab.0.bottom/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585744769285" />
+    <state width="1820" height="289" key="GridCell.Tab.0.bottom/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585755174281" />
+    <state width="1817" height="289" key="GridCell.Tab.0.bottom/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585742546170" />
+    <state width="1820" height="289" key="GridCell.Tab.0.center" timestamp="1585755174280">
+      <screen x="58" y="23" width="1862" height="1057" />
+    </state>
+    <state width="1817" height="289" key="GridCell.Tab.0.center/51.23.1869.1057/1920.115.1680.1027@51.23.1869.1057" timestamp="1585740938672" />
+    <state width="1822" height="289" key="GridCell.Tab.0.center/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748692705" />
+    <state width="1817" height="289" key="GridCell.Tab.0.center/54.23.1866.1057/1920.115.1680.1027@54.23.1866.1057" timestamp="1585741326533" />
+    <state width="1822" height="289" key="GridCell.Tab.0.center/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585744769284" />
+    <state width="1820" height="289" key="GridCell.Tab.0.center/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585755174280" />
+    <state width="1817" height="289" key="GridCell.Tab.0.center/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585742546169" />
+    <state width="1820" height="289" key="GridCell.Tab.0.left" timestamp="1585755174280">
+      <screen x="58" y="23" width="1862" height="1057" />
+    </state>
+    <state width="1817" height="289" key="GridCell.Tab.0.left/51.23.1869.1057/1920.115.1680.1027@51.23.1869.1057" timestamp="1585740938672" />
+    <state width="1822" height="289" key="GridCell.Tab.0.left/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748692704" />
+    <state width="1817" height="289" key="GridCell.Tab.0.left/54.23.1866.1057/1920.115.1680.1027@54.23.1866.1057" timestamp="1585741326532" />
+    <state width="1822" height="289" key="GridCell.Tab.0.left/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585744769284" />
+    <state width="1820" height="289" key="GridCell.Tab.0.left/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585755174280" />
+    <state width="1817" height="289" key="GridCell.Tab.0.left/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585742546169" />
+    <state width="1820" height="289" key="GridCell.Tab.0.right" timestamp="1585755174281">
+      <screen x="58" y="23" width="1862" height="1057" />
+    </state>
+    <state width="1817" height="289" key="GridCell.Tab.0.right/51.23.1869.1057/1920.115.1680.1027@51.23.1869.1057" timestamp="1585740938673" />
+    <state width="1822" height="289" key="GridCell.Tab.0.right/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748692706" />
+    <state width="1817" height="289" key="GridCell.Tab.0.right/54.23.1866.1057/1920.115.1680.1027@54.23.1866.1057" timestamp="1585741326533" />
+    <state width="1822" height="289" key="GridCell.Tab.0.right/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585744769284" />
+    <state width="1820" height="289" key="GridCell.Tab.0.right/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585755174281" />
+    <state width="1817" height="289" key="GridCell.Tab.0.right/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585742546170" />
+    <state x="158" y="123" width="1662" height="857" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1585754126624">
+      <screen x="58" y="23" width="1862" height="1057" />
+    </state>
+    <state x="158" y="123" width="1662" height="857" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585754126624" />
+    <state x="681" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1585750808164">
+      <screen x="58" y="23" width="1862" height="1057" />
+    </state>
+    <state x="680" y="383" key="com.intellij.ide.util.TipDialog/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585743896627" />
+    <state x="681" y="383" key="com.intellij.ide.util.TipDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585750808164" />
+    <state x="683" y="383" key="com.intellij.ide.util.TipDialog/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585737727273" />
+  </component>
+</project>
