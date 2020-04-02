@@ -14,51 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb8ebdbc-2c30-46d0-894e-df29f7b47c7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/firmware.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/firmware.elf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib581/Adafruit GFX Library_ID13/Adafruit_GFX.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib581/Adafruit GFX Library_ID13/Adafruit_SPITFT.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib581/Adafruit GFX Library_ID13/glcdfont.c.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib581/libAdafruit GFX Library_ID13.a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib81c/Adafruit SSD1306_ID135/Adafruit_SSD1306.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib81c/libAdafruit SSD1306_ID135.a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib864/SPI/SPI.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib864/libSPI.a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/libf25/Wire/Wire.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/libf25/libWire.a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/src/ManageLcd.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ManageLcd.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ManageLcd.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/.sconsign.py37.dblite" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/.sconsign.py37.dblite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/lib1eb/libESPAsyncTCP_ID305.a" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib1eb/libESPAsyncTCP_ID305.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/lib25b/libESP8266WiFi.a" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib25b/libESP8266WiFi.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/lib963/libNTPClient_ID551.a" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/lib963/libNTPClient_ID551.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/libFrameworkArduino.a" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/libFrameworkArduino.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/liba54/ESP Async WebServer_ID306/SPIFFSEditor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/liba54/ESP Async WebServer_ID306/SPIFFSEditor.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/liba54/libESP Async WebServer_ID306.a" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/liba54/libESP Async WebServer_ID306.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/libdef/libHash.a" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/libdef/libHash.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/src/ManageTime.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/src/ManageTime.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/src/ManageWifi.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/src/ManageWifi.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/esp01_1m/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/esp01_1m/src/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pio/build/project.checksum" beforeDir="false" afterPath="$PROJECT_DIR$/.pio/build/project.checksum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeListsPrivate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeListsPrivate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/Z_DUMMY_TARGET.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-esp01_1m/alarmclock-esp.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-esp01_1m/alarmclock-esp.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManageTime.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManageTime.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManageWifi.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManageWifi.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManageWifi.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManageWifi.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +93,7 @@
       <workItem from="1585743896658" duration="3877000" />
       <workItem from="1585750807440" duration="3662000" />
       <workItem from="1585815358647" duration="12630000" />
-      <workItem from="1585837047208" duration="6623000" />
+      <workItem from="1585837047208" duration="6919000" />
     </task>
     <servers />
   </component>

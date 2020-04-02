@@ -1,3 +1,6 @@
-.pio
+./pio
 CMakeListsPrivate.txt
-cmake-build-*/ 
+./include
+./lib
+./cmake-build-debug
+./cmake-build-esp01_1m
