@@ -46,14 +46,18 @@ bool ManageLcd::setupLcd() {
     return true;
 }
 void ManageLcd::printTextLcd(String lcdText){
-    Serial.println("321");
+    clearLcd();
     display.print(lcdText);
-    display.display(); // <--- THIS ONE CAUSE CRASH
+    display.display();
     delay(1000);
 }
 
 void ManageLcd::clearLcd() {
+    display.setTextColor(WHITE);
+    display.setCursor(10, 0);
     display.clearDisplay();
+    display.setTextSize(1);
+    display.flush();
     display.display();
 }
 

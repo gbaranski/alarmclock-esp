@@ -24,6 +24,7 @@ ManageLcd lcdManager;
 ManageTime timeManager;
 #endif
 
+#include <Schedule.h>
 
 #include <ESP8266WiFi.h>
 #include <ESPAsyncTCP.h>
@@ -52,8 +53,8 @@ void notFound(AsyncWebServerRequest *request) {
 }
 
 
-void ManageWifi::setupServerHandling() {
 
+void ManageWifi::setupServerHandling() {
     server.on("/getTimeData", HTTP_GET, [] (AsyncWebServerRequest *request) {
         request->send(200, "text/plain", R"({"currentTime":")" + timeManager.getTime() + "\"}");
         Serial.print("received/get");
@@ -65,7 +66,11 @@ void ManageWifi::setupServerHandling() {
         Serial.println(request->client()->remoteIP());
         request->send(200, "text/plain", "OK");
         timeManager.saveAlarmTime(String(p->value()));
-        lcdManager.printTextLcd("New request"); // <--- HERE IT CRASH, CHECK
+        String outputMsg = "New request!\n Time: " + String(p->value()) + "\n IP: " + request->client()->remoteIP().toString();
+        
+        schedule_function([outputMsg](){ 
+            lcdManager.printTextLcd(outputMsg);
+            });
     }
     });
     server.onNotFound(notFound);
