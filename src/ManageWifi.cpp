@@ -12,10 +12,16 @@
 #include "config.h"
 #endif
 
+
+#ifndef ALARMCLOCK_ESP_MANAGELCD_H
+#include "ManageLcd.h"
+ManageLcd lcdManager;
+#endif
+
+
 #ifndef ALARMCLOCK_ESP_MANAGETIME_H
 #include "ManageTime.h"
 ManageTime timeManager;
-#define ALARMCLOCK_ESP_MANAGETIME_H
 #endif
 
 
@@ -37,6 +43,7 @@ bool ManageWifi::setupWifiConnection() {
     }
     Serial.print("IP Address: ");
     Serial.println(WiFi.localIP());
+
     return true;
 }
 
@@ -57,9 +64,14 @@ void ManageWifi::setupServerHandling() {
         Serial.printf("Received %s with value %s from IP: \n", p->name().c_str(), p->value().c_str());
         Serial.println(request->client()->remoteIP());
         request->send(200, "text/plain", "OK");
-
+        timeManager.saveAlarmTime(String(p->value()));
+        lcdManager.printTextLcd("New request"); // <--- HERE IT CRASH, CHECK
     }
     });
     server.onNotFound(notFound);
     server.begin();
+}
+
+String ManageWifi::getLocalIp() {
+    return WiFi.localIP().toString();
 }

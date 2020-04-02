@@ -10,9 +10,9 @@
 #endif
 
 #ifndef ALARMCLOCK_ESP_CONFIG_H
+#define ALARMCLOCK_ESP_CONFIG_H
 #include "config.h"
 #endif
-
 
 #include <NTPClient.h>
 #include <WiFiUdp.h>
@@ -33,6 +33,18 @@ String ManageTime::getTime() {
     return timeClient.getFormattedTime();
 }
 
-void ManageTime::saveAlarmTime(String data) {
+String parseTimeToHour(String time) {
+    time.remove(2);
+    return time;
+}
 
+String parseTimeToMinute(String time) {
+    time.remove(0,3);
+    return time;
+}
+
+void ManageTime::saveAlarmTime(String data) {
+    Serial.println("fulltime" + data);
+    Serial.println("Hour:" + parseTimeToHour(data));
+    Serial.println("Minute:" + parseTimeToMinute(data));
 }

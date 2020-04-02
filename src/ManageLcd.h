@@ -5,9 +5,13 @@
 #ifndef ALARMCLOCK_ESP_MANAGELCD_H
 #define ALARMCLOCK_ESP_MANAGELCD_H
 
+#include <WString.h>
 
 class ManageLcd {
-
+public:
+    bool setupLcd();
+    void printTextLcd(String lcdText);
+    void clearLcd();
 };
 
 

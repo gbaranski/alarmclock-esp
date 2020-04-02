@@ -5,11 +5,16 @@
 #ifndef ALARMCLOCK_ESP_MANAGEWIFI_H
 #define ALARMCLOCK_ESP_MANAGEWIFI_H
 
+#ifndef WSTRING_H
+#include <WString.h>
+#endif
+
 
 class ManageWifi {
     public:
         bool setupWifiConnection();
         void setupServerHandling();
+        String getLocalIp();
 };
 
 

@@ -239,9 +239,22 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/tcp_ax
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/tcp_axtls.c.s"
 	/Users/gbaranski/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gbaranski/Documents/code/C++/alarmclock-esp/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/tcp_axtls.c -o CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/tcp_axtls.c.s
 
+CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.obj: ../src/ManageLcd.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-esp01_1m/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.obj"
+	/Users/gbaranski/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.obj -c /Users/gbaranski/Documents/code/C++/alarmclock-esp/src/ManageLcd.cpp
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.i"
+	/Users/gbaranski/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gbaranski/Documents/code/C++/alarmclock-esp/src/ManageLcd.cpp > CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.s"
+	/Users/gbaranski/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gbaranski/Documents/code/C++/alarmclock-esp/src/ManageLcd.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.s
+
 CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.obj: ../src/ManageTime.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-esp01_1m/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-esp01_1m/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.obj"
 	/Users/gbaranski/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.obj -c /Users/gbaranski/Documents/code/C++/alarmclock-esp/src/ManageTime.cpp
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.i: cmake_force
@@ -254,7 +267,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.s: cmake_force
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.obj: ../src/ManageWifi.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-esp01_1m/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-esp01_1m/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.obj"
 	/Users/gbaranski/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.obj -c /Users/gbaranski/Documents/code/C++/alarmclock-esp/src/ManageWifi.cpp
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.i: cmake_force
@@ -267,7 +280,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.s: cmake_force
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-esp01_1m/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-esp01_1m/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
 	/Users/gbaranski/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj -c /Users/gbaranski/Documents/code/C++/alarmclock-esp/src/main.cpp
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.i: cmake_force
@@ -294,6 +307,7 @@ Z_DUMMY_TARGET_OBJECTS = \
 "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/ESPAsyncTCPbuffer.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/SyncClient.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/tcp_axtls.c.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
@@ -315,12 +329,13 @@ Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/ESPAsyncTCPbuffer.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/SyncClient.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESPAsyncTCP_ID305/src/tcp_axtls.c.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/build.make
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-esp01_1m/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Z_DUMMY_TARGET"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-esp01_1m/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable Z_DUMMY_TARGET"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Z_DUMMY_TARGET.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -527,6 +527,33 @@ Production/fast:
 	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESP_Async_WebServer_ID306/src/WebServer.cpp.s
 .PHONY : .pio/libdeps/esp01_1m/ESP_Async_WebServer_ID306/src/WebServer.cpp.s
 
+src/ManageLcd.obj: src/ManageLcd.cpp.obj
+
+.PHONY : src/ManageLcd.obj
+
+# target to build an object file
+src/ManageLcd.cpp.obj:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.obj
+.PHONY : src/ManageLcd.cpp.obj
+
+src/ManageLcd.i: src/ManageLcd.cpp.i
+
+.PHONY : src/ManageLcd.i
+
+# target to preprocess a source file
+src/ManageLcd.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.i
+.PHONY : src/ManageLcd.cpp.i
+
+src/ManageLcd.s: src/ManageLcd.cpp.s
+
+.PHONY : src/ManageLcd.s
+
+# target to generate assembly for a file
+src/ManageLcd.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.s
+.PHONY : src/ManageLcd.cpp.s
+
 src/ManageTime.obj: src/ManageTime.cpp.obj
 
 .PHONY : src/ManageTime.obj
@@ -661,6 +688,9 @@ help:
 	@echo "... .pio/libdeps/esp01_1m/ESP_Async_WebServer_ID306/src/WebServer.obj"
 	@echo "... .pio/libdeps/esp01_1m/ESP_Async_WebServer_ID306/src/WebServer.i"
 	@echo "... .pio/libdeps/esp01_1m/ESP_Async_WebServer_ID306/src/WebServer.s"
+	@echo "... src/ManageLcd.obj"
+	@echo "... src/ManageLcd.i"
+	@echo "... src/ManageLcd.s"
 	@echo "... src/ManageTime.obj"
 	@echo "... src/ManageTime.i"
 	@echo "... src/ManageTime.s"

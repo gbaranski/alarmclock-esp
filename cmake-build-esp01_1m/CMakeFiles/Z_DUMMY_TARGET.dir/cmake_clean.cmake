@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESP_Async_WebServer_ID306/src/WebRequest.cpp.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESP_Async_WebServer_ID306/src/WebResponses.cpp.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp01_1m/ESP_Async_WebServer_ID306/src/WebServer.cpp.obj"
+  "CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageLcd.cpp.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageTime.cpp.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/ManageWifi.cpp.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
