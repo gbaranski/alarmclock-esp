@@ -2,21 +2,18 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="alarmclock-esp" targetName="Z_DUMMY_TARGET" />
-      <config projectName="alarmclock-esp" targetName="Debug" />
-      <config projectName="alarmclock-esp" targetName="Production" />
+      <config projectName="esp-alarmclock" targetName="Debug" />
+      <config projectName="esp-alarmclock" targetName="Production" />
+      <config projectName="esp-alarmclock" targetName="Z_DUMMY_TARGET" />
     </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="esp01_1m" CONFIG_NAME="esp01_1m" />
+      <configuration PROFILE_NAME="lolin32" CONFIG_NAME="lolin32" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb8ebdbc-2c30-46d0-894e-df29f7b47c7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d9905695-613d-45e6-8d68-00b98830a2a7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,48 +22,31 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:esp01_1m" />
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:lolin32" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="OCResolveContextSettings">
-    <option name="configuration" value="0-esp01_1m-Z_DUMMY_TARGET" />
-  </component>
-  <component name="ProjectId" id="1ZtvhmzYCfIdLaNsf6ghyoLqbO4" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1aIwTu3UynOUPEMOnMHhAQP35AD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="PlatformIO.PlatformIO Upload">
-    <configuration name="Z_DUMMY_TARGET" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="alarmclock-esp" TARGET_NAME="Z_DUMMY_TARGET" CONFIG_NAME="esp01_1m" RUN_TARGET_PROJECT_NAME="alarmclock-esp" RUN_TARGET_NAME="Z_DUMMY_TARGET">
+    <configuration name="Z_DUMMY_TARGET" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="esp-alarmclock" TARGET_NAME="Z_DUMMY_TARGET" CONFIG_NAME="lolin32" RUN_TARGET_PROJECT_NAME="esp-alarmclock" RUN_TARGET_NAME="Z_DUMMY_TARGET">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlatformIO Debug" type="platformio" factoryName="PlatformIO Debug" PASS_PARENT_ENVS_2="true" PROJECT_NAME="alarmclock-esp" TARGET_NAME="Debug" CONFIG_NAME="esp01_1m" RUN_TARGET_PROJECT_NAME="alarmclock-esp" RUN_TARGET_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
+    <configuration name="PlatformIO Debug" type="platformio" factoryName="PlatformIO Debug" PASS_PARENT_ENVS_2="true" PROJECT_NAME="esp-alarmclock" TARGET_NAME="Debug" CONFIG_NAME="lolin32" RUN_TARGET_PROJECT_NAME="esp-alarmclock" RUN_TARGET_NAME="Debug">
+      <method v="2" />
     </configuration>
-    <configuration name="PlatformIO Upload" type="platformio" factoryName="PlatformIO Upload" PASS_PARENT_ENVS_2="true" PROJECT_NAME="alarmclock-esp" TARGET_NAME="Production" CONFIG_NAME="esp01_1m" RUN_TARGET_PROJECT_NAME="alarmclock-esp" RUN_TARGET_NAME="Production">
+    <configuration name="PlatformIO Upload" type="platformio" factoryName="PlatformIO Upload" PASS_PARENT_ENVS_2="true" PROJECT_NAME="esp-alarmclock" TARGET_NAME="Production" CONFIG_NAME="lolin32" RUN_TARGET_PROJECT_NAME="esp-alarmclock" RUN_TARGET_NAME="Production">
       <method v="2" />
     </configuration>
     <list>
@@ -80,104 +60,68 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cb8ebdbc-2c30-46d0-894e-df29f7b47c7b" name="Default Changelist" comment="" />
-      <created>1585671326682</created>
+      <changelist id="d9905695-613d-45e6-8d68-00b98830a2a7" name="Default Changelist" comment="" />
+      <created>1586436426782</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1585671326682</updated>
-      <workItem from="1585671330189" duration="801000" />
-      <workItem from="1585672202409" duration="843000" />
-      <workItem from="1585737695178" duration="5209000" />
-      <workItem from="1585743044375" duration="199000" />
-      <workItem from="1585743254067" duration="631000" />
-      <workItem from="1585743896658" duration="3877000" />
-      <workItem from="1585750807440" duration="3662000" />
-      <workItem from="1585815358647" duration="12630000" />
-      <workItem from="1585837047208" duration="6919000" />
+      <updated>1586436426782</updated>
+      <workItem from="1586436428177" duration="2887000" />
+      <workItem from="1586440323478" duration="1484000" />
+      <workItem from="1586442577852" duration="5166000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="451" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585748600241">
-      <screen x="52" y="23" width="1868" height="1057" />
+    <state x="453" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586440608469">
+      <screen x="58" y="23" width="1862" height="1057" />
     </state>
-    <state x="451" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748600241" />
-    <state x="454" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585672156227" />
-    <state x="729" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585824561145">
+    <state x="453" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1586440608469" />
+    <state width="1822" height="319" key="GridCell.Tab.0.bottom" timestamp="1586448541117">
       <screen x="56" y="23" width="1864" height="1057" />
     </state>
-    <state x="726" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748222703" />
-    <state x="729" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585824561145" />
-    <state x="730" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585753832645" />
-    <state x="158" y="123" width="1662" height="857" key="DiffContextDialog" timestamp="1585754126624">
+    <state width="1638" height="289" key="GridCell.Tab.0.bottom/54.23.1866.1057/1920.23.1680.1027@1920.23.1680.1027" timestamp="1586436593545" />
+    <state width="1638" height="309" key="GridCell.Tab.0.bottom/56.23.1864.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1586448115941" />
+    <state width="1822" height="319" key="GridCell.Tab.0.bottom/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1586448541117" />
+    <state width="1820" height="299" key="GridCell.Tab.0.bottom/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1586443698942" />
+    <state width="1638" height="289" key="GridCell.Tab.0.bottom/58.23.1862.1057/1920.23.1680.1027@58.23.1862.1057" timestamp="1586440222461" />
+    <state width="1638" height="299" key="GridCell.Tab.0.bottom/61.23.1859.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1586447267768" />
+    <state width="1822" height="319" key="GridCell.Tab.0.bottom/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1586448464913" />
+    <state width="1822" height="319" key="GridCell.Tab.0.center" timestamp="1586448541116">
+      <screen x="56" y="23" width="1864" height="1057" />
+    </state>
+    <state width="1638" height="289" key="GridCell.Tab.0.center/54.23.1866.1057/1920.23.1680.1027@1920.23.1680.1027" timestamp="1586436593545" />
+    <state width="1638" height="309" key="GridCell.Tab.0.center/56.23.1864.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1586448115940" />
+    <state width="1822" height="319" key="GridCell.Tab.0.center/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1586448541116" />
+    <state width="1820" height="299" key="GridCell.Tab.0.center/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1586443698941" />
+    <state width="1638" height="289" key="GridCell.Tab.0.center/58.23.1862.1057/1920.23.1680.1027@58.23.1862.1057" timestamp="1586440222443" />
+    <state width="1638" height="299" key="GridCell.Tab.0.center/61.23.1859.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1586447267767" />
+    <state width="1822" height="319" key="GridCell.Tab.0.center/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1586448464912" />
+    <state width="1822" height="319" key="GridCell.Tab.0.left" timestamp="1586448541116">
+      <screen x="56" y="23" width="1864" height="1057" />
+    </state>
+    <state width="1638" height="289" key="GridCell.Tab.0.left/54.23.1866.1057/1920.23.1680.1027@1920.23.1680.1027" timestamp="1586436593544" />
+    <state width="1638" height="309" key="GridCell.Tab.0.left/56.23.1864.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1586448115940" />
+    <state width="1822" height="319" key="GridCell.Tab.0.left/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1586448541116" />
+    <state width="1820" height="299" key="GridCell.Tab.0.left/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1586443698940" />
+    <state width="1638" height="289" key="GridCell.Tab.0.left/58.23.1862.1057/1920.23.1680.1027@58.23.1862.1057" timestamp="1586440222442" />
+    <state width="1638" height="299" key="GridCell.Tab.0.left/61.23.1859.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1586447267767" />
+    <state width="1822" height="319" key="GridCell.Tab.0.left/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1586448464912" />
+    <state width="1822" height="319" key="GridCell.Tab.0.right" timestamp="1586448541116">
+      <screen x="56" y="23" width="1864" height="1057" />
+    </state>
+    <state width="1638" height="289" key="GridCell.Tab.0.right/54.23.1866.1057/1920.23.1680.1027@1920.23.1680.1027" timestamp="1586436593545" />
+    <state width="1638" height="309" key="GridCell.Tab.0.right/56.23.1864.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1586448115940" />
+    <state width="1822" height="319" key="GridCell.Tab.0.right/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1586448541116" />
+    <state width="1820" height="299" key="GridCell.Tab.0.right/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1586443698941" />
+    <state width="1638" height="289" key="GridCell.Tab.0.right/58.23.1862.1057/1920.23.1680.1027@58.23.1862.1057" timestamp="1586440222460" />
+    <state width="1638" height="299" key="GridCell.Tab.0.right/61.23.1859.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1586447267768" />
+    <state width="1822" height="319" key="GridCell.Tab.0.right/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1586448464912" />
+    <state x="682" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1586442586895">
       <screen x="58" y="23" width="1862" height="1057" />
     </state>
-    <state x="158" y="123" width="1662" height="857" key="DiffContextDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585754126624" />
-    <state width="1820" height="299" key="GridCell.Tab.0.bottom" timestamp="1585844919757">
-      <screen x="58" y="23" width="1862" height="1057" />
-    </state>
-    <state width="1817" height="289" key="GridCell.Tab.0.bottom/51.23.1869.1057/1920.115.1680.1027@51.23.1869.1057" timestamp="1585740938673" />
-    <state width="1822" height="289" key="GridCell.Tab.0.bottom/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748692706" />
-    <state width="1822" height="289" key="GridCell.Tab.0.bottom/54.23.1866.1057/1920.115.1680.1027@54.23.1866.1057" timestamp="1585829341543" />
-    <state width="1822" height="289" key="GridCell.Tab.0.bottom/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585836440991" />
-    <state width="1638" height="289" key="GridCell.Tab.0.bottom/58.23.1862.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1585843146998" />
-    <state width="1820" height="299" key="GridCell.Tab.0.bottom/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585844919757" />
-    <state width="1822" height="289" key="GridCell.Tab.0.bottom/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585832926116" />
-    <state width="1820" height="299" key="GridCell.Tab.0.center" timestamp="1585844919757">
-      <screen x="58" y="23" width="1862" height="1057" />
-    </state>
-    <state width="1817" height="289" key="GridCell.Tab.0.center/51.23.1869.1057/1920.115.1680.1027@51.23.1869.1057" timestamp="1585740938672" />
-    <state width="1822" height="289" key="GridCell.Tab.0.center/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748692705" />
-    <state width="1822" height="289" key="GridCell.Tab.0.center/54.23.1866.1057/1920.115.1680.1027@54.23.1866.1057" timestamp="1585829341543" />
-    <state width="1822" height="289" key="GridCell.Tab.0.center/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585836440990" />
-    <state width="1638" height="289" key="GridCell.Tab.0.center/58.23.1862.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1585843146997" />
-    <state width="1820" height="299" key="GridCell.Tab.0.center/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585844919757" />
-    <state width="1822" height="289" key="GridCell.Tab.0.center/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585832926115" />
-    <state width="1820" height="299" key="GridCell.Tab.0.left" timestamp="1585844919756">
-      <screen x="58" y="23" width="1862" height="1057" />
-    </state>
-    <state width="1817" height="289" key="GridCell.Tab.0.left/51.23.1869.1057/1920.115.1680.1027@51.23.1869.1057" timestamp="1585740938672" />
-    <state width="1822" height="289" key="GridCell.Tab.0.left/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748692704" />
-    <state width="1822" height="289" key="GridCell.Tab.0.left/54.23.1866.1057/1920.115.1680.1027@54.23.1866.1057" timestamp="1585829341542" />
-    <state width="1822" height="289" key="GridCell.Tab.0.left/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585836440989" />
-    <state width="1638" height="289" key="GridCell.Tab.0.left/58.23.1862.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1585843146996" />
-    <state width="1820" height="299" key="GridCell.Tab.0.left/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585844919756" />
-    <state width="1822" height="289" key="GridCell.Tab.0.left/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585832926115" />
-    <state width="1820" height="299" key="GridCell.Tab.0.right" timestamp="1585844919757">
-      <screen x="58" y="23" width="1862" height="1057" />
-    </state>
-    <state width="1817" height="289" key="GridCell.Tab.0.right/51.23.1869.1057/1920.115.1680.1027@51.23.1869.1057" timestamp="1585740938673" />
-    <state width="1822" height="289" key="GridCell.Tab.0.right/52.23.1868.1057/1920.115.1680.1027@52.23.1868.1057" timestamp="1585748692706" />
-    <state width="1822" height="289" key="GridCell.Tab.0.right/54.23.1866.1057/1920.115.1680.1027@54.23.1866.1057" timestamp="1585829341543" />
-    <state width="1822" height="289" key="GridCell.Tab.0.right/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585836440990" />
-    <state width="1638" height="289" key="GridCell.Tab.0.right/58.23.1862.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1585843146997" />
-    <state width="1820" height="299" key="GridCell.Tab.0.right/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585844919757" />
-    <state width="1822" height="289" key="GridCell.Tab.0.right/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585832926116" />
-    <state x="158" y="123" width="1662" height="857" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1585754126624">
-      <screen x="58" y="23" width="1862" height="1057" />
-    </state>
-    <state x="158" y="123" width="1662" height="857" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585754126624" />
-    <state x="2484" y="465" key="com.intellij.ide.util.TipDialog" timestamp="1585837612589">
-      <screen x="1920" y="115" width="1680" height="1027" />
-    </state>
-    <state x="680" y="383" key="com.intellij.ide.util.TipDialog/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585815358971" />
-    <state x="2484" y="465" key="com.intellij.ide.util.TipDialog/58.23.1862.1057/1920.115.1680.1027@1920.115.1680.1027" timestamp="1585837612589" />
-    <state x="683" y="383" key="com.intellij.ide.util.TipDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585836910296" />
-    <state x="683" y="383" key="com.intellij.ide.util.TipDialog/61.23.1859.1057/1920.115.1680.1027@61.23.1859.1057" timestamp="1585737727273" />
-    <state width="600" height="424" key="javadoc.popup" timestamp="1585843362061">
-      <screen x="58" y="23" width="1862" height="1057" />
-    </state>
-    <state width="600" height="424" key="javadoc.popup/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585843362061" />
-    <state x="654" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1585845078769">
-      <screen x="58" y="23" width="1862" height="1057" />
-    </state>
-    <state x="653" y="258" width="670" height="676" key="search.everywhere.popup/56.23.1864.1057/1920.115.1680.1027@56.23.1864.1057" timestamp="1585833906034" />
-    <state x="654" y="258" width="670" height="676" key="search.everywhere.popup/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1585845078769" />
+    <state x="682" y="384" key="com.intellij.ide.util.TipDialog/58.23.1862.1057/1920.115.1680.1027@58.23.1862.1057" timestamp="1586442586895" />
   </component>
 </project>

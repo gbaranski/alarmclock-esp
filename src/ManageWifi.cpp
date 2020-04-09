@@ -18,16 +18,19 @@
 ManageLcd lcdManager;
 #endif
 
+#ifndef _TASKSCHEDULER_H_
+#include <TaskScheduler.h>
+
+#endif
+
 
 #ifndef ALARMCLOCK_ESP_MANAGETIME_H
 #include "ManageTime.h"
-ManageTime timeManager;
+ManageTime wifiTimeManager;
 #endif
 
-#include <Schedule.h>
-
-#include <ESP8266WiFi.h>
-#include <ESPAsyncTCP.h>
+#include <WiFi.h>
+#include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 
 AsyncWebServer server(80);
@@ -56,26 +59,25 @@ void notFound(AsyncWebServerRequest *request) {
 
 void ManageWifi::setupServerHandling() {
     server.on("/getTimeData", HTTP_GET, [] (AsyncWebServerRequest *request) {
-        request->send(200, "text/plain", R"({"currentTime":")" + timeManager.getTime() + "\"}");
+        request->send(200, "text/plain", R"({"currentTime":")" + wifiTimeManager.getTime() + "\"}");
         Serial.print("received/get");
     });
     server.on("/setAlarm", HTTP_GET, [](AsyncWebServerRequest * request) {
-    if(request->hasParam("time")) {
-        AsyncWebParameter* p = request->getParam("time");
-        Serial.printf("Received %s with value %s from IP: \n", p->name().c_str(), p->value().c_str());
-        Serial.println(request->client()->remoteIP());
-        request->send(200, "text/plain", "OK");
-        timeManager.saveAlarmTime(String(p->value()));
-        String outputMsg = "New request!\n Time: " + String(p->value()) + "\n IP: " + request->client()->remoteIP().toString();
-        
-        schedule_function([outputMsg](){ 
-            lcdManager.printTextLcd(outputMsg);
-            });
-    }
+        if(request->hasParam("time")) {
+            AsyncWebParameter* p = request->getParam("time");
+            Serial.printf("Received %s with value %s from IP: \n", p->name().c_str(), p->value().c_str());
+            Serial.println(request->client()->remoteIP());
+            request->send(200, "text/plain", "OK");
+            wifiTimeManager.saveAlarmTime(String(p->value()));
+            String outputMsg = "New request!\n Time: " + String(p->value()) + "\n IP: " + request->client()->remoteIP().toString();
+            lcdManager.clearLcd();
+            lcdManager.printTextLcd("chuj123", 1);
+        }
     });
     server.onNotFound(notFound);
     server.begin();
 }
+
 
 String ManageWifi::getLocalIp() {
     return WiFi.localIP().toString();

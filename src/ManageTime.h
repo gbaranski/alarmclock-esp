@@ -12,11 +12,11 @@
 
 
 class ManageTime {
-    public:
-        String getTime();
-        void setupNtp();
-        void updateTime();
-        void saveAlarmTime(String data);
+public:
+    String getTime();
+    void setupNtp();
+    void updateTime();
+    void saveAlarmTime(String data);
 };
 
 

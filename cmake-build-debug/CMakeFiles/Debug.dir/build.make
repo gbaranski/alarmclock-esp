@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/gbaranski/Documents/code/C++/alarmclock-esp
+CMAKE_SOURCE_DIR = /Users/gbaranski/Documents/code/C++/esp-alarmclock
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug
 
 # Utility rule file for Debug.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-buil
 include CMakeFiles/Debug.dir/progress.make
 
 CMakeFiles/Debug:
-	cd /Users/gbaranski/Documents/code/C++/alarmclock-esp && platformio -c clion run --target debug -eDebug
+	cd /Users/gbaranski/Documents/code/C++/esp-alarmclock && platformio -c clion run --target debug -eDebug
 
 Debug: CMakeFiles/Debug
 Debug: CMakeFiles/Debug.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/Debug.dir/clean:
 .PHONY : CMakeFiles/Debug.dir/clean
 
 CMakeFiles/Debug.dir/depend:
-	cd /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gbaranski/Documents/code/C++/alarmclock-esp /Users/gbaranski/Documents/code/C++/alarmclock-esp /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug/CMakeFiles/Debug.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gbaranski/Documents/code/C++/esp-alarmclock /Users/gbaranski/Documents/code/C++/esp-alarmclock /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug/CMakeFiles/Debug.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Debug.dir/depend
 

@@ -17,6 +17,11 @@
 #include <NTPClient.h>
 #include <WiFiUdp.h>
 
+#ifndef ALARMCLOCK_ESP_MANAGELCD_H
+#include <ManageLcd.h>
+ManageLcd timeLcdManager;
+#endif
+
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
 
@@ -27,6 +32,7 @@ void ManageTime::setupNtp() {
 
 void ManageTime::updateTime() {
     timeClient.update();
+    timeLcdManager.printTextLcd(timeClient.getFormattedTime(), 2);
 }
 
 String ManageTime::getTime() {

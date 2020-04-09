@@ -10,7 +10,7 @@
 class ManageLcd {
 public:
     bool setupLcd();
-    void printTextLcd(String lcdText);
+    void printTextLcd(String lcdText, int fontSize);
     void clearLcd();
 };
 

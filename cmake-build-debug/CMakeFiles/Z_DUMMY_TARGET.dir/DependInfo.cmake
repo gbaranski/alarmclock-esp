@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/gbaranski/Documents/code/C++/alarmclock-esp/src/main.c" "/Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug/CMakeFiles/Z_DUMMY_TARGET.dir/src/main.c.obj"
+  "/Users/gbaranski/Documents/code/C++/esp-alarmclock/src/main.c" "/Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug/CMakeFiles/Z_DUMMY_TARGET.dir/src/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

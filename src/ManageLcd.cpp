@@ -6,6 +6,11 @@
 #include <WString.h>
 
 
+#ifndef ALARMCLOCK_ESP_MANAGETIME_H
+#include "ManageTime.h"
+ManageTime lcdTimeManager;
+#endif
+
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -23,15 +28,15 @@
 #define lcd_address 0x3C
 #endif
 
-
-
 #ifndef OLED_RESET
 #define OLED_RESET -1
 #endif
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
+
 bool ManageLcd::setupLcd() {
+    Wire.begin(5,4);
     if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
         Serial.println("SSD1306 allocation failed");
         return false;
@@ -45,19 +50,20 @@ bool ManageLcd::setupLcd() {
     delay(1000);
     return true;
 }
-void ManageLcd::printTextLcd(String lcdText){
+void ManageLcd::printTextLcd(String lcdText, int fontSize){
     clearLcd();
+    display.setTextSize(fontSize);
     display.print(lcdText);
     display.display();
-    delay(1000);
 }
+
+
 
 void ManageLcd::clearLcd() {
     display.setTextColor(WHITE);
     display.setCursor(10, 0);
     display.clearDisplay();
-    display.setTextSize(1);
-    display.flush();
+
     display.display();
 }
 

@@ -18,6 +18,10 @@ ManageWifi wifiManager;
 ManageLcd mainLcdManager;
 #endif
 
+
+
+unsigned long previousMillis = 0;        // will store last time LED was updated
+
 void setup() {
     Serial.begin(9600);
     if(!mainLcdManager.setupLcd())
@@ -26,15 +30,18 @@ void setup() {
             delay(1000);
         }
     wifiManager.setupWifiConnection();
-    mainLcdManager.clearLcd();
-    mainLcdManager.printTextLcd("IP: " + wifiManager.getLocalIp());
-    wifiManager.setupServerHandling();
     mainTimeManager.setupNtp();
+    mainLcdManager.clearLcd();
+    mainLcdManager.printTextLcd("IP: " + wifiManager.getLocalIp(), 1);
+    wifiManager.setupServerHandling();
 
 
-    delay(1000);
 }
+
 void loop() {
-    mainTimeManager.updateTime();
-    delay(1000);
+    unsigned long currentMillis = millis();
+    if (currentMillis - previousMillis >= 1000) {
+        previousMillis = currentMillis;
+        mainTimeManager.updateTime();
+    }
 }

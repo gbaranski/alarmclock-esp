@@ -11,10 +11,10 @@
 
 
 class ManageWifi {
-    public:
-        bool setupWifiConnection();
-        void setupServerHandling();
-        String getLocalIp();
+public:
+    bool setupWifiConnection();
+    void setupServerHandling();
+    String getLocalIp();
 };
 
 

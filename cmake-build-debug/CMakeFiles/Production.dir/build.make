@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/gbaranski/Documents/code/C++/alarmclock-esp
+CMAKE_SOURCE_DIR = /Users/gbaranski/Documents/code/C++/esp-alarmclock
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug
 
 # Utility rule file for Production.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-buil
 include CMakeFiles/Production.dir/progress.make
 
 CMakeFiles/Production:
-	cd /Users/gbaranski/Documents/code/C++/alarmclock-esp && platformio -c clion run -eDebug
+	cd /Users/gbaranski/Documents/code/C++/esp-alarmclock && platformio -c clion run -eDebug
 
 Production: CMakeFiles/Production
 Production: CMakeFiles/Production.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/Production.dir/clean:
 .PHONY : CMakeFiles/Production.dir/clean
 
 CMakeFiles/Production.dir/depend:
-	cd /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gbaranski/Documents/code/C++/alarmclock-esp /Users/gbaranski/Documents/code/C++/alarmclock-esp /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug /Users/gbaranski/Documents/code/C++/alarmclock-esp/cmake-build-debug/CMakeFiles/Production.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gbaranski/Documents/code/C++/esp-alarmclock /Users/gbaranski/Documents/code/C++/esp-alarmclock /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug /Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug/CMakeFiles/Production.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Production.dir/depend
 
