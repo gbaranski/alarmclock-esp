@@ -44,4 +44,5 @@ void loop() {
         previousMillis = currentMillis;
         mainTimeManager.updateTime();
     }
+    wifiManager.handleServer();
 }

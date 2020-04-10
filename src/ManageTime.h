@@ -14,6 +14,7 @@
 class ManageTime {
 public:
     String getTime();
+    String getAlarmTime();
     void setupNtp();
     void updateTime();
     void saveAlarmTime(String data);

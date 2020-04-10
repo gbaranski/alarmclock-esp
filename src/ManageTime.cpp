@@ -25,6 +25,7 @@ ManageLcd timeLcdManager;
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
 
+String alarmTime = "12:30";
 
 void ManageTime::setupNtp() {
     timeClient.begin();
@@ -49,8 +50,14 @@ String parseTimeToMinute(String time) {
     return time;
 }
 
+
 void ManageTime::saveAlarmTime(String data) {
     Serial.println("fulltime" + data);
     Serial.println("Hour:" + parseTimeToHour(data));
     Serial.println("Minute:" + parseTimeToMinute(data));
+    alarmTime = data;
+}
+
+String ManageTime::getAlarmTime() {
+    return alarmTime;
 }

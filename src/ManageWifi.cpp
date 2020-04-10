@@ -30,16 +30,10 @@ ManageTime wifiTimeManager;
 #endif
 
 #include <WiFi.h>
-#include <AsyncTCP.h>
-#include <ESPAsyncWebServer.h>
-
-AsyncWebServer server(80);
-const char* PARAM_MESSAGE = "message";
-
-
+#include <WebServer.h>
+WebServer server(serverPort);
 
 bool ManageWifi::setupWifiConnection() {
-    WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
     if(WiFi.waitForConnectResult() != WL_CONNECTED) {
         Serial.printf("Wifi failed");
@@ -47,38 +41,43 @@ bool ManageWifi::setupWifiConnection() {
     }
     Serial.print("IP Address: ");
     Serial.println(WiFi.localIP());
-
+    server.begin();
     return true;
 }
 
-void notFound(AsyncWebServerRequest *request) {
-    request->send(404, "text/plain", "Not found");
+
+void handle404() {
+    server.send(404, "text/plain", "Not found");
 }
 
-
+void handleGetESPData() {
+    String espOutput = R"({"currentTime":")" + wifiTimeManager.getTime() + R"(","alarmTime":")" + wifiTimeManager.getAlarmTime() + "\"}";
+    Serial.println(espOutput);
+    server.send(200, "application/json", espOutput);
+}
+void handleSetAlarm() {
+    if(server.hasArg("time")) {
+        server.send(200, "text/plain", "Alarm set to" + server.arg("time"));
+        lcdManager.printTextLcd("New request!\nAlarm is set to " + server.arg("time") + "\nFrom IP " + server.client().remoteIP().toString(), 1);
+        wifiTimeManager.saveAlarmTime(server.arg("time"));
+        delay(2000);
+    } else {
+        server.send(400,"text/plain", "NO ARG \"TIME\"");
+    }
+}
 
 void ManageWifi::setupServerHandling() {
-    server.on("/getTimeData", HTTP_GET, [] (AsyncWebServerRequest *request) {
-        request->send(200, "text/plain", R"({"currentTime":")" + wifiTimeManager.getTime() + "\"}");
-        Serial.print("received/get");
-    });
-    server.on("/setAlarm", HTTP_GET, [](AsyncWebServerRequest * request) {
-        if(request->hasParam("time")) {
-            AsyncWebParameter* p = request->getParam("time");
-            Serial.printf("Received %s with value %s from IP: \n", p->name().c_str(), p->value().c_str());
-            Serial.println(request->client()->remoteIP());
-            request->send(200, "text/plain", "OK");
-            wifiTimeManager.saveAlarmTime(String(p->value()));
-            String outputMsg = "New request!\n Time: " + String(p->value()) + "\n IP: " + request->client()->remoteIP().toString();
-            lcdManager.clearLcd();
-            lcdManager.printTextLcd("chuj123", 1);
-        }
-    });
-    server.onNotFound(notFound);
-    server.begin();
+    server.onNotFound(handle404);
+    server.on("/getESPData", handleGetESPData);
+    server.on("/setAlarm", handleSetAlarm);
 }
 
 
 String ManageWifi::getLocalIp() {
     return WiFi.localIP().toString();
 }
+
+void ManageWifi::handleServer() {
+    server.handleClient();
+}
+

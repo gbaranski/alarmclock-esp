@@ -14,6 +14,7 @@ class ManageWifi {
 public:
     bool setupWifiConnection();
     void setupServerHandling();
+    void handleServer();
     String getLocalIp();
 };
 

@@ -61,7 +61,7 @@ void ManageLcd::printTextLcd(String lcdText, int fontSize){
 
 void ManageLcd::clearLcd() {
     display.setTextColor(WHITE);
-    display.setCursor(10, 0);
+    display.setCursor(0, 0);
     display.clearDisplay();
 
     display.display();
