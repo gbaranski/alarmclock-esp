@@ -32,6 +32,11 @@ ManageTime lcdTimeManager;
 #define OLED_RESET -1
 #endif
 
+#ifndef ALARMCLOCK_ESP_MANAGESENSOR_H
+#include "ManageSensor.h"
+ManageSensor lcdSensorManager;
+#endif
+
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 int lcdMode = 1;
@@ -97,9 +102,10 @@ void ManageLcd::refreshLcd() {
             break;
         case 3:
             display.setTextSize(1);
-            display.println("ESP Info");
-            display.setTextSize(2);
-            display.println("mode3");
+            display.println("Alarm time: " + lcdTimeManager.getAlarmTime());
+            display.println("Temperature: " + String(lcdSensorManager.getDhtTemperature()));
+            display.println("Humidity: " + String(lcdSensorManager.getDhtHumidity()) + "%");
+            display.println("Heat index:" + String(lcdSensorManager.getHeatIndex()));
             break;
     }
     display.display();

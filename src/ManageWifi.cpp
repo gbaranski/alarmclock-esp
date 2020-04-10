@@ -18,9 +18,9 @@
 ManageLcd lcdManager;
 #endif
 
-#ifndef _TASKSCHEDULER_H_
-#include <TaskScheduler.h>
-
+#ifndef ALARMCLOCK_ESP_MANAGESENSOR_H
+#include "ManageSensor.h"
+ManageSensor sensorManager;
 #endif
 
 
@@ -51,7 +51,16 @@ void handle404() {
 }
 
 void handleGetESPData() {
-    String espOutput = R"({"currentTime":")" + wifiTimeManager.getTime() + R"(","alarmTime":")" + wifiTimeManager.getAlarmTime() + "\"}";
+    String espOutput =
+            R"({
+
+            "currentTime":")" + wifiTimeManager.getTime() +
+            R"(","alarmTime":")" + wifiTimeManager.getAlarmTime() +
+            R"(","temperature":")" + sensorManager.getDhtTemperature() +
+            R"(","humidity":")" + sensorManager.getDhtHumidity() +
+            R"(","heatIndex":")" + sensorManager.getHeatIndex() +
+
+            "\"}";
     Serial.println(espOutput);
     server.send(200, "application/json", espOutput);
 }
