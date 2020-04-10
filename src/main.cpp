@@ -21,9 +21,13 @@ ManageLcd mainLcdManager;
 
 
 unsigned long previousMillis = 0;        // will store last time LED was updated
+const int modePushButton = 19;
 
 void setup() {
+
     Serial.begin(9600);
+    pinMode(modePushButton, INPUT_PULLUP);
+
     if(!mainLcdManager.setupLcd())
         while(true){
             Serial.println("SSD1306 allocation failed");
@@ -36,13 +40,30 @@ void setup() {
     wifiManager.setupServerHandling();
 
 
+
 }
 
+bool lastModeButtonState = false;
+
+
 void loop() {
+    wifiManager.handleServer();
     unsigned long currentMillis = millis();
     if (currentMillis - previousMillis >= 1000) {
         previousMillis = currentMillis;
         mainTimeManager.updateTime();
+        mainLcdManager.refreshLcd();
     }
-    wifiManager.handleServer();
+
+    int modeButtonState = digitalRead(modePushButton);
+
+    if(modeButtonState == LOW && !lastModeButtonState) {
+        Serial.println("Pressed");
+        mainLcdManager.changeLcdMode();
+        delay(300);
+        lastModeButtonState = true;
+    }
+    if(modeButtonState == HIGH) {
+        lastModeButtonState = false;
+    }
 }

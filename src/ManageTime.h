@@ -18,6 +18,7 @@ public:
     void setupNtp();
     void updateTime();
     void saveAlarmTime(String data);
+    String getFormattedRemainingTime();
 };
 
 

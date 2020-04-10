@@ -34,6 +34,7 @@ ManageTime lcdTimeManager;
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
+int lcdMode = 1;
 
 bool ManageLcd::setupLcd() {
     Wire.begin(5,4);
@@ -64,6 +65,43 @@ void ManageLcd::clearLcd() {
     display.setCursor(0, 0);
     display.clearDisplay();
 
+    display.display();
+}
+
+
+
+void ManageLcd::changeLcdMode(){
+    lcdMode++;
+}
+
+int ManageLcd::getLcdMode() {
+    return lcdMode;
+}
+
+void ManageLcd::refreshLcd() {
+    clearLcd();
+    switch (lcdMode) {
+        case 4:
+        case 1:
+            lcdMode = 1;
+            display.setTextSize(1);
+            display.println("Current time");
+            display.setTextSize(2);
+            display.println(lcdTimeManager.getTime());
+            break;
+        case 2:
+            display.setTextSize(1);
+            display.println("Remaining time");
+            display.setTextSize(2);
+            display.println(lcdTimeManager.getFormattedRemainingTime());
+            break;
+        case 3:
+            display.setTextSize(1);
+            display.println("ESP Info");
+            display.setTextSize(2);
+            display.println("mode3");
+            break;
+    }
     display.display();
 }
 

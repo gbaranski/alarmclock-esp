@@ -12,6 +12,9 @@ public:
     bool setupLcd();
     void printTextLcd(String lcdText, int fontSize);
     void clearLcd();
+    void changeLcdMode();
+    int getLcdMode();
+    void refreshLcd();
 };
 
 
