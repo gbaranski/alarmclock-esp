@@ -24,6 +24,7 @@ ManageTime lcdTimeManager;
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
 #endif
 
+
 #ifndef lcd_address
 #define lcd_address 0x3C
 #endif
@@ -31,6 +32,7 @@ ManageTime lcdTimeManager;
 #ifndef OLED_RESET
 #define OLED_RESET -1
 #endif
+
 
 #ifndef ALARMCLOCK_ESP_MANAGESENSOR_H
 #include "ManageSensor.h"
@@ -68,9 +70,8 @@ void ManageLcd::printTextLcd(String lcdText, int fontSize){
 void ManageLcd::clearLcd() {
     display.setTextColor(WHITE);
     display.setCursor(0, 0);
+    display.setTextSize(1);
     display.clearDisplay();
-
-    display.display();
 }
 
 
@@ -102,7 +103,9 @@ void ManageLcd::refreshLcd() {
             break;
         case 3:
             display.setTextSize(1);
+            display.cp437(true);
             display.println("Alarm time: " + lcdTimeManager.getAlarmTime());
+            display.write(167);
             display.println("Temperature: " + String(lcdSensorManager.getDhtTemperature()));
             display.println("Humidity: " + String(lcdSensorManager.getDhtHumidity()) + "%");
             display.println("Heat index:" + String(lcdSensorManager.getHeatIndex()));

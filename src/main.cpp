@@ -39,14 +39,12 @@ void setup() {
             Serial.println("SSD1306 allocation failed");
             delay(1000);
         }
-    mainSensorManager.setupSensors();
     wifiManager.setupWifiConnection();
     mainTimeManager.setupNtp();
     mainLcdManager.clearLcd();
     mainLcdManager.printTextLcd("IP: " + wifiManager.getLocalIp(), 1);
     wifiManager.setupServerHandling();
-
-
+    mainSensorManager.setupSensors();
 
 }
 
@@ -55,20 +53,13 @@ bool lastAdditionalButtonState = false;
 
 void loop() {
     wifiManager.handleServer();
-    unsigned long currentMillis = millis();
-    if (currentMillis - previousMillis >= 1000) {
-        previousMillis = currentMillis;
-        mainTimeManager.updateTime();
-        mainLcdManager.refreshLcd();
-        mainSensorManager.refreshDht();
-    }
 
     int modeButtonState = digitalRead(modePushButton);
 
     if(modeButtonState == LOW && !lastModeButtonState) {
         Serial.println("Pressed mode button");
         mainLcdManager.changeLcdMode();
-        delay(300);
+        delay(200);
         lastModeButtonState = true;
     }
     if(modeButtonState == HIGH) {
@@ -79,10 +70,16 @@ void loop() {
 
     if(additionalButtonState == LOW && !lastAdditionalButtonState) {
         Serial.println("Pressed additional button");
-        delay(300);
         lastAdditionalButtonState = true;
     }
     if(additionalButtonState== HIGH) {
         lastAdditionalButtonState = false;
+    }
+
+    if (millis() - previousMillis >= 1000) {
+        previousMillis = millis();
+        mainTimeManager.updateTime();
+        mainLcdManager.refreshLcd();
+        Serial.println("Updating");
     }
 }

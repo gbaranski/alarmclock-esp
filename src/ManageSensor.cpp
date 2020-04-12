@@ -4,10 +4,12 @@
 
 #include "ManageSensor.h"
 #include <DHT.h>
+#include <Adafruit_Sensor.h>
 
 
 #define DHTPIN 13
 #define DHTTYPE DHT22
+
 
 DHT dht(DHTPIN, DHTTYPE);
 
