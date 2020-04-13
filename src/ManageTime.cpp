@@ -23,7 +23,7 @@ ManageLcd timeLcdManager;
 #endif
 
 WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP);
+NTPClient timeClient(ntpUDP, "0.pl.pool.ntp.org", 7200, 60000);
 
 String alarmTime = "12:30";
 

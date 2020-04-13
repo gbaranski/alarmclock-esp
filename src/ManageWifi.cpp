@@ -52,14 +52,12 @@ void handle404() {
 
 void handleGetESPData() {
     String espOutput =
-            R"({
-
-            "currentTime":")" + wifiTimeManager.getTime() +
+            R"({"currentTime":")" + wifiTimeManager.getTime() +
             R"(","alarmTime":")" + wifiTimeManager.getAlarmTime() +
+            R"(","remainingTime":")" + wifiTimeManager.getFormattedRemainingTime() +
             R"(","temperature":")" + sensorManager.getDhtTemperature() +
             R"(","humidity":")" + sensorManager.getDhtHumidity() +
             R"(","heatIndex":")" + sensorManager.getHeatIndex() +
-
             "\"}";
     Serial.println(espOutput);
     server.send(200, "application/json", espOutput);
