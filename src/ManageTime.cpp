@@ -88,3 +88,9 @@ String ManageTime::getFormattedRemainingTime() {
     }
     return formatDoubleDigit(String(remainingHours))  + ":" + formatDoubleDigit(String(remainingMinutes)) + ":" + formatDoubleDigit(String(remainingSeconds));
 }
+bool ManageTime::isNowAlarmTime() {
+    if(timeClient.getHours() == parseTimeToHour(alarmTime).toInt() && timeClient.getMinutes() == parseTimeToMinute(alarmTime).toInt()) {
+        return true;
+    }
+    return false;
+}

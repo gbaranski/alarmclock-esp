@@ -19,6 +19,7 @@ public:
     void updateTime();
     void saveAlarmTime(String data);
     String getFormattedRemainingTime();
+    bool isNowAlarmTime();
 };
 
 

@@ -28,12 +28,17 @@ ManageSensor mainSensorManager;
 unsigned long previousMillis = 0;        // will store last time LED was updated
 const int modePushButton = 19;
 const int additionalPushButton = 27;
+const int sirenOutput = 23;
+
+
 
 void setup() {
 
     Serial.begin(9600);
     pinMode(modePushButton, INPUT_PULLUP);
     pinMode(additionalPushButton, INPUT_PULLUP);
+    pinMode(sirenOutput, OUTPUT);
+    digitalWrite(sirenOutput, 0);
     if(!mainLcdManager.setupLcd())
         while(true){
             Serial.println("SSD1306 allocation failed");
@@ -50,9 +55,11 @@ void setup() {
 
 bool lastModeButtonState = false;
 bool lastAdditionalButtonState = false;
+bool isAlarmOff = false;
 
 void loop() {
     wifiManager.handleServer();
+    
 
     int modeButtonState = digitalRead(modePushButton);
 
@@ -67,19 +74,31 @@ void loop() {
     }
 
     int additionalButtonState = digitalRead(additionalPushButton);
-
     if(additionalButtonState == LOW && !lastAdditionalButtonState) {
         Serial.println("Pressed additional button");
+        delay(200);
         lastAdditionalButtonState = true;
+        isAlarmOff = true;
     }
     if(additionalButtonState== HIGH) {
         lastAdditionalButtonState = false;
+    }
+
+    if(mainTimeManager.isNowAlarmTime()) {
+        if(!isAlarmOff) {
+            digitalWrite(sirenOutput, 1);
+        }else {
+            digitalWrite(sirenOutput, 0);
+        }
+    }else
+    {
+        isAlarmOff = false;
+        digitalWrite(sirenOutput, 0);
     }
 
     if (millis() - previousMillis >= 1000) {
         previousMillis = millis();
         mainTimeManager.updateTime();
         mainLcdManager.refreshLcd();
-        Serial.println("Updating");
     }
 }
