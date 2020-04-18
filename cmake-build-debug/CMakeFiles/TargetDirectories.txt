@@ -1,5 +1,0 @@
-/Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug/CMakeFiles/Z_DUMMY_TARGET.dir
-/Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug/CMakeFiles/Debug.dir
-/Users/gbaranski/Documents/code/C++/esp-alarmclock/cmake-build-debug/CMakeFiles/Production.dir
