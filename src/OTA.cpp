@@ -7,7 +7,7 @@
 
 void Ota::setupOta()
 {
-    ArduinoOTA.setPort(8000);
+    ArduinoOTA.setPort(3232);
 
     ArduinoOTA.setHostname("Alarmclock-esp32");
 
