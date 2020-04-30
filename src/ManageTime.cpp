@@ -21,7 +21,7 @@ ManageLcd timeLcdManager;
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "0.pl.pool.ntp.org", 7200, 60000);
 
-String alarmTime = "12:30";
+String alarmTime = "07:45"; // default alarm time
 bool alarmState = true;
 
 void ManageTime::setupNtp() {
