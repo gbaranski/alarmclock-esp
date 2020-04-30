@@ -23,6 +23,10 @@ ManageLcd mainLcdManager;
 ManageSensor mainSensorManager;
 #endif
 
+#ifndef ALARMCLOCK_ESP_OTA_H
+#include "OTA.h"
+Ota manageOta;
+#endif
 
 
 unsigned long previousMillis = 0;        // will store last time LED was updated
@@ -50,7 +54,7 @@ void setup() {
     mainLcdManager.printTextLcd("IP: " + wifiManager.getLocalIp(), 1);
     wifiManager.setupServerHandling();
     mainSensorManager.setupSensors();
-
+    manageOta.setupOta();
 }
 
 bool lastModeButtonState = false;
@@ -59,8 +63,8 @@ bool isAlarmOff = false;
 
 void loop() {
     wifiManager.handleServer();
+    manageOta.handleOta();
     
-
     int modeButtonState = digitalRead(modePushButton);
 
     if(modeButtonState == LOW && !lastModeButtonState) {
