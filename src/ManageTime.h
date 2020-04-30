@@ -20,6 +20,9 @@ public:
     void saveAlarmTime(String data);
     String getFormattedRemainingTime();
     bool isNowAlarmTime();
+    String getAlarmState();
+    int getAlarmStateBoolean();
+    void setAlarmState(bool newAlarmState);
 };
 
 

@@ -87,17 +87,18 @@ void loop() {
     if(additionalButtonState== HIGH) {
         lastAdditionalButtonState = false;
     }
-
-    if(mainTimeManager.isNowAlarmTime()) {
-        if(!isAlarmOff) {
-            digitalWrite(sirenOutput, 1);
-        }else {
+    if(mainTimeManager.getAlarmStateBoolean()) {
+        if(mainTimeManager.isNowAlarmTime()) {
+            if(!isAlarmOff) {
+                digitalWrite(sirenOutput, 1);
+            }else {
+                digitalWrite(sirenOutput, 0);
+            }
+        }else
+        {
+            isAlarmOff = false;
             digitalWrite(sirenOutput, 0);
         }
-    }else
-    {
-        isAlarmOff = false;
-        digitalWrite(sirenOutput, 0);
     }
 
     if (millis() - previousMillis >= 1000) {

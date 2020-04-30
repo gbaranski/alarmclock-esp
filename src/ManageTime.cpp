@@ -9,10 +9,6 @@
 #include <WString.h>
 #endif
 
-#ifndef ALARMCLOCK_ESP_CONFIG_H
-#define ALARMCLOCK_ESP_CONFIG_H
-#include "config.h"
-#endif
 
 #include <NTPClient.h>
 #include <WiFiUdp.h>
@@ -26,6 +22,7 @@ WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "0.pl.pool.ntp.org", 7200, 60000);
 
 String alarmTime = "12:30";
+bool alarmState = true;
 
 void ManageTime::setupNtp() {
     timeClient.begin();
@@ -94,3 +91,17 @@ bool ManageTime::isNowAlarmTime() {
     }
     return false;
 }
+String ManageTime::getAlarmState() {
+    if(alarmState) {
+        return " ON";
+    } else {
+        return "OFF";
+    }
+}
+int ManageTime::getAlarmStateBoolean() {
+    return alarmState;
+}
+void ManageTime::setAlarmState(bool newAlarmState) {
+    alarmState = newAlarmState;
+}
+

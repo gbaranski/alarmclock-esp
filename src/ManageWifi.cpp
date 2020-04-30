@@ -55,6 +55,7 @@ void handleGetESPData() {
             R"({"currentTime":")" + wifiTimeManager.getTime() +
             R"(","alarmTime":")" + wifiTimeManager.getAlarmTime() +
             R"(","remainingTime":")" + wifiTimeManager.getFormattedRemainingTime() +
+            R"(","alarmState":")" + wifiTimeManager.getAlarmStateBoolean() +
             R"(","temperature":")" + sensorManager.getDhtTemperature() +
             R"(","humidity":")" + sensorManager.getDhtHumidity() +
             R"(","heatIndex":")" + sensorManager.getHeatIndex() +
@@ -67,9 +68,17 @@ void handleSetAlarm() {
         server.send(200, "text/plain", "Alarm set to" + server.arg("time"));
         lcdManager.printTextLcd("New request!\nAlarm is set to " + server.arg("time") + "\nFrom IP " + server.client().remoteIP().toString(), 1);
         wifiTimeManager.saveAlarmTime(server.arg("time"));
-        delay(2000);
     } else {
         server.send(400,"text/plain", "NO ARG \"TIME\"");
+    }
+}
+
+void handleSetAlarmState() {
+    if(server.hasArg("state")) {
+        server.send(200, "text/plain", "New state: " + server.arg("state"));
+        wifiTimeManager.setAlarmState(server.arg("state").toInt());
+    } else {
+        server.send(400, "text/plain", "NO ARG \"STATE\"");
     }
 }
 
@@ -77,6 +86,7 @@ void ManageWifi::setupServerHandling() {
     server.onNotFound(handle404);
     server.on("/getESPData", handleGetESPData);
     server.on("/setAlarm", handleSetAlarm);
+    server.on("/setAlarmState", handleSetAlarmState);
 }
 
 

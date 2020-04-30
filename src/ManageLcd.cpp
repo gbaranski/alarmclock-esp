@@ -91,7 +91,7 @@ void ManageLcd::refreshLcd() {
         case 1:
             lcdMode = 1;
             display.setTextSize(1);
-            display.println("Current time");
+            display.println("Current time      " + lcdTimeManager.getAlarmState());
             display.setTextSize(2);
             display.println(lcdTimeManager.getTime());
             break;
@@ -99,7 +99,12 @@ void ManageLcd::refreshLcd() {
             display.setTextSize(1);
             display.println("Remaining time");
             display.setTextSize(2);
-            display.println(lcdTimeManager.getFormattedRemainingTime());
+            if(lcdTimeManager.getAlarmStateBoolean()) {
+                display.println(lcdTimeManager.getFormattedRemainingTime());
+            } else {
+                display.println("Alarm OFF");
+            }
+            
             break;
         case 3:
             display.setTextSize(1);
