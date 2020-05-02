@@ -12,7 +12,6 @@
 #include "config.h"
 #endif
 
-
 #ifndef ALARMCLOCK_ESP_MANAGELCD_H
 #include "ManageLcd.h"
 ManageLcd lcdManager;
@@ -23,7 +22,6 @@ ManageLcd lcdManager;
 ManageSensor sensorManager;
 #endif
 
-
 #ifndef ALARMCLOCK_ESP_MANAGETIME_H
 #include "ManageTime.h"
 ManageTime wifiTimeManager;
@@ -33,9 +31,11 @@ ManageTime wifiTimeManager;
 #include <WebServer.h>
 WebServer server(serverPort);
 
-bool ManageWifi::setupWifiConnection() {
+bool ManageWifi::setupWifiConnection()
+{
     WiFi.begin(ssid, password);
-    if(WiFi.waitForConnectResult() != WL_CONNECTED) {
+    if (WiFi.waitForConnectResult() != WL_CONNECTED)
+    {
         Serial.printf("Wifi failed");
         return false;
     }
@@ -45,56 +45,66 @@ bool ManageWifi::setupWifiConnection() {
     return true;
 }
 
-
-void handle404() {
+void handle404()
+{
     server.send(404, "text/plain", "Not found");
 }
 
-void handleGetESPData() {
+void handleGetESPData()
+{
     String espOutput =
-            R"({"currentTime":")" + wifiTimeManager.getTime() +
-            R"(","alarmTime":")" + wifiTimeManager.getAlarmTime() +
-            R"(","remainingTime":")" + wifiTimeManager.getFormattedRemainingTime() +
-            R"(","alarmState":")" + wifiTimeManager.getAlarmStateBoolean() +
-            R"(","temperature":")" + sensorManager.getDhtTemperature() +
-            R"(","humidity":")" + sensorManager.getDhtHumidity() +
-            R"(","heatIndex":")" + sensorManager.getHeatIndex() +
-            "\"}";
+        R"({"currentTime":")" + wifiTimeManager.getTime() +
+        R"(","alarmTime":")" + wifiTimeManager.getAlarmTime() +
+        R"(","remainingTime":")" + wifiTimeManager.getFormattedRemainingTime() +
+        R"(","alarmState":")" + wifiTimeManager.getAlarmStateBoolean() +
+        R"(","temperature":")" + sensorManager.getDhtTemperature() +
+        R"(","humidity":")" + sensorManager.getDhtHumidity() +
+        R"(","heatIndex":")" + sensorManager.getHeatIndex() +
+        "\"}";
     Serial.println(espOutput);
     server.send(200, "application/json", espOutput);
 }
-void handleSetAlarm() {
-    if(server.hasArg("time")) {
+void handleSetAlarm()
+{
+    if (server.hasArg("time"))
+    {
         server.send(200, "text/plain", "Alarm set to" + server.arg("time"));
         lcdManager.printTextLcd("New request!\nAlarm is set to " + server.arg("time") + "\nFrom IP " + server.client().remoteIP().toString(), 1);
         wifiTimeManager.saveAlarmTime(server.arg("time"));
-    } else {
-        server.send(400,"text/plain", "NO ARG \"TIME\"");
+    }
+    else
+    {
+        server.send(400, "text/plain", "NO ARG \"TIME\"");
     }
 }
 
-void handleSetAlarmState() {
-    if(server.hasArg("state")) {
+void handleSetAlarmState()
+{
+    if (server.hasArg("state"))
+    {
         server.send(200, "text/plain", "New state: " + server.arg("state"));
         wifiTimeManager.setAlarmState(server.arg("state").toInt());
-    } else {
+    }
+    else
+    {
         server.send(400, "text/plain", "NO ARG \"STATE\"");
     }
 }
 
-void ManageWifi::setupServerHandling() {
+void ManageWifi::setupServerHandling()
+{
     server.onNotFound(handle404);
     server.on("/getESPData", handleGetESPData);
     server.on("/setAlarm", handleSetAlarm);
     server.on("/setAlarmState", handleSetAlarmState);
 }
 
-
-String ManageWifi::getLocalIp() {
+String ManageWifi::getLocalIp()
+{
     return WiFi.localIP().toString();
 }
 
-void ManageWifi::handleServer() {
+void ManageWifi::handleServer()
+{
     server.handleClient();
 }
-

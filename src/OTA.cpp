@@ -45,6 +45,7 @@ void Ota::setupOta()
 
     ArduinoOTA.begin();
 }
-void Ota::handleOta() {
+void Ota::handleOta()
+{
     ArduinoOTA.handle();
 }

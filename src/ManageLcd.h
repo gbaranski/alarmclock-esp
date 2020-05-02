@@ -7,7 +7,8 @@
 
 #include <WString.h>
 
-class ManageLcd {
+class ManageLcd
+{
 public:
     bool setupLcd();
     void printTextLcd(String lcdText, int fontSize);
@@ -16,6 +17,5 @@ public:
     int getLcdMode();
     void refreshLcd();
 };
-
 
 #endif //ALARMCLOCK_ESP_MANAGELCD_H

@@ -9,14 +9,13 @@
 #include <WString.h>
 #endif
 
-
-class ManageWifi {
+class ManageWifi
+{
 public:
     bool setupWifiConnection();
     void setupServerHandling();
     void handleServer();
     String getLocalIp();
 };
-
 
 #endif //ALARMCLOCK_ESP_MANAGEWIFI_H

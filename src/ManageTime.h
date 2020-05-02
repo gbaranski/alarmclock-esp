@@ -10,8 +10,8 @@
 #include <WString.h>
 #endif
 
-
-class ManageTime {
+class ManageTime
+{
 public:
     String getTime();
     String getAlarmTime();
@@ -24,6 +24,5 @@ public:
     int getAlarmStateBoolean();
     void setAlarmState(bool newAlarmState);
 };
-
 
 #endif //ALARMCLOCK_ESP_MANAGETIME_H

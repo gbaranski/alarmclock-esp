@@ -5,8 +5,8 @@
 #ifndef ESP_ALARMCLOCK_MANAGESENSOR_H
 #define ESP_ALARMCLOCK_MANAGESENSOR_H
 
-
-class ManageSensor {
+class ManageSensor
+{
 public:
     void setupSensors();
     float getDhtTemperature();
@@ -14,6 +14,5 @@ public:
     float getHeatIndex();
     void refreshDht();
 };
-
 
 #endif //ESP_ALARMCLOCK_MANAGESENSOR_H

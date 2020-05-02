@@ -2,8 +2,9 @@
 #define ALARMCLOCK_ESP_OTA_H
 #endif
 
-class Ota {
-    public:
-        void setupOta();
-        void handleOta();
+class Ota
+{
+public:
+    void setupOta();
+    void handleOta();
 };

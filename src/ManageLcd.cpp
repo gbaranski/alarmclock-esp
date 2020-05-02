@@ -5,7 +5,6 @@
 #include "ManageLcd.h"
 #include <WString.h>
 
-
 #ifndef ALARMCLOCK_ESP_MANAGETIME_H
 #include "ManageTime.h"
 ManageTime lcdTimeManager;
@@ -24,7 +23,6 @@ ManageTime lcdTimeManager;
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
 #endif
 
-
 #ifndef lcd_address
 #define lcd_address 0x3C
 #endif
@@ -32,7 +30,6 @@ ManageTime lcdTimeManager;
 #ifndef OLED_RESET
 #define OLED_RESET -1
 #endif
-
 
 #ifndef ALARMCLOCK_ESP_MANAGESENSOR_H
 #include "ManageSensor.h"
@@ -43,9 +40,11 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 int lcdMode = 1;
 
-bool ManageLcd::setupLcd() {
-    Wire.begin(5,4);
-    if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+bool ManageLcd::setupLcd()
+{
+    Wire.begin(5, 4);
+    if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C))
+    {
         Serial.println("SSD1306 allocation failed");
         return false;
     }
@@ -58,66 +57,68 @@ bool ManageLcd::setupLcd() {
     delay(1000);
     return true;
 }
-void ManageLcd::printTextLcd(String lcdText, int fontSize){
+void ManageLcd::printTextLcd(String lcdText, int fontSize)
+{
     clearLcd();
     display.setTextSize(fontSize);
     display.print(lcdText);
     display.display();
 }
 
-
-
-void ManageLcd::clearLcd() {
+void ManageLcd::clearLcd()
+{
     display.setTextColor(WHITE);
     display.setCursor(0, 0);
     display.setTextSize(1);
     display.clearDisplay();
 }
 
-
-
-void ManageLcd::changeLcdMode(){
+void ManageLcd::changeLcdMode()
+{
     lcdMode++;
 }
 
-int ManageLcd::getLcdMode() {
+int ManageLcd::getLcdMode()
+{
     return lcdMode;
 }
 
-void ManageLcd::refreshLcd() {
+void ManageLcd::refreshLcd()
+{
     clearLcd();
-    switch (lcdMode) {
-        case 4:
-        case 1:
-            lcdMode = 1;
-            display.setTextSize(1);
-            display.println("Current time      " + lcdTimeManager.getAlarmState());
-            display.setTextSize(2);
-            display.println(lcdTimeManager.getTime());
-            break;
-        case 2:
-            display.setTextSize(1);
-            display.println("Remaining time");
-            display.setTextSize(2);
-            if(lcdTimeManager.getAlarmStateBoolean()) {
-                display.println(lcdTimeManager.getFormattedRemainingTime());
-            } else {
-                display.println("Alarm OFF");
-            }
-            
-            break;
-        case 3:
-            display.setTextSize(1);
-            display.cp437(true);
-            display.println("Alarm time: " + lcdTimeManager.getAlarmTime());
-            display.write(167);
-            display.println("Temperature: " + String(lcdSensorManager.getDhtTemperature()));
-            display.println("Humidity: " + String(lcdSensorManager.getDhtHumidity()) + "%");
-            display.println("Heat index:" + String(lcdSensorManager.getHeatIndex()));
-            break;
+    switch (lcdMode)
+    {
+    case 4:
+    case 1:
+        lcdMode = 1;
+        display.setTextSize(1);
+        display.println("Current time      " + lcdTimeManager.getAlarmState());
+        display.setTextSize(2);
+        display.println(lcdTimeManager.getTime());
+        break;
+    case 2:
+        display.setTextSize(1);
+        display.println("Remaining time");
+        display.setTextSize(2);
+        if (lcdTimeManager.getAlarmStateBoolean())
+        {
+            display.println(lcdTimeManager.getFormattedRemainingTime());
+        }
+        else
+        {
+            display.println("Alarm OFF");
+        }
+
+        break;
+    case 3:
+        display.setTextSize(1);
+        display.cp437(true);
+        display.println("Alarm time: " + lcdTimeManager.getAlarmTime());
+        display.write(167);
+        display.println("Temperature: " + String(lcdSensorManager.getDhtTemperature()));
+        display.println("Humidity: " + String(lcdSensorManager.getDhtHumidity()) + "%");
+        display.println("Heat index:" + String(lcdSensorManager.getHeatIndex()));
+        break;
     }
     display.display();
 }
-
-
-
