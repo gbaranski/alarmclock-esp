@@ -12,6 +12,8 @@
 class ManageWifi
 {
 public:
+    bool isAlarmDuringTest();
+    void stopAlarmTest();
     bool setupWifiConnection();
     void setupServerHandling();
     void handleServer();

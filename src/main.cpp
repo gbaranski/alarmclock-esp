@@ -59,11 +59,17 @@ void setup()
 bool lastModeButtonState = false;
 bool lastAdditionalButtonState = false;
 bool isAlarmOff = false;
+unsigned long millisToStop;
 
 void loop()
 {
     wifiManager.handleServer();
     manageOta.handleOta();
+
+    if (wifiManager.isAlarmDuringTest())
+    {
+        digitalWrite(sirenOutput, 1);
+    }
 
     int modeButtonState = digitalRead(modePushButton);
 
@@ -116,5 +122,9 @@ void loop()
         previousMillis = millis();
         mainTimeManager.updateTime();
         mainLcdManager.refreshLcd();
+        if(wifiManager.isAlarmDuringTest()) {
+            wifiManager.stopAlarmTest();
+            digitalWrite(sirenOutput, 0);
+        }
     }
 }

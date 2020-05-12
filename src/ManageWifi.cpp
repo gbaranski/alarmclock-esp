@@ -31,6 +31,8 @@ ManageTime wifiTimeManager;
 #include <WebServer.h>
 WebServer server(serverPort);
 
+bool alarmDuringTest = false;
+
 bool ManageWifi::setupWifiConnection()
 {
     WiFi.begin(ssid, password);
@@ -91,12 +93,27 @@ void handleSetAlarmState()
     }
 }
 
+void handleTestAlarm() 
+{
+    alarmDuringTest = true;
+    server.send(200, "text/plain", "OK");
+}
+
+bool ManageWifi::isAlarmDuringTest() {
+    return alarmDuringTest;
+}
+
+void ManageWifi::stopAlarmTest() {
+    alarmDuringTest = false;
+}
+
 void ManageWifi::setupServerHandling()
 {
     server.onNotFound(handle404);
     server.on("/getESPData", handleGetESPData);
     server.on("/setAlarm", handleSetAlarm);
     server.on("/setAlarmState", handleSetAlarmState);
+    server.on("/testAlarm", handleTestAlarm);
 }
 
 String ManageWifi::getLocalIp()
