@@ -29,7 +29,7 @@ Ota manageOta;
 #endif
 
 unsigned long previousMillis = 0; // will store last time LED was updated
-const int modePushButton = 19;
+const int modePushButton = 26;
 const int additionalPushButton = 27;
 const int sirenOutput = 23;
 
@@ -122,7 +122,8 @@ void loop()
         previousMillis = millis();
         mainTimeManager.updateTime();
         mainLcdManager.refreshLcd();
-        if(wifiManager.isAlarmDuringTest()) {
+        if (wifiManager.isAlarmDuringTest())
+        {
             wifiManager.stopAlarmTest();
             digitalWrite(sirenOutput, 0);
         }
