@@ -7,7 +7,7 @@
 #include <Adafruit_Sensor.h>
 
 #define DHTPIN 13
-#define DHTTYPE DHT22
+#define DHTTYPE DHT11
 
 DHT dht(DHTPIN, DHTTYPE);
 
