@@ -58,11 +58,11 @@ void handleGetESPData()
         R"({"currentTime":")" + wifiTimeManager.getTime() +
         R"(","alarmTime":")" + wifiTimeManager.getAlarmTime() +
         R"(","remainingTime":")" + wifiTimeManager.getFormattedRemainingTime() +
-        R"(","alarmState":")" + wifiTimeManager.getAlarmStateBoolean() +
-        R"(","temperature":")" + sensorManager.getDhtTemperature() +
-        R"(","humidity":")" + sensorManager.getDhtHumidity() +
-        R"(","heatIndex":")" + sensorManager.getHeatIndex() +
-        "\"}";
+        R"(","alarmState":)" + wifiTimeManager.getAlarmStateBoolean() +
+        R"(,"temperature":)" + sensorManager.getDhtTemperature() +
+        R"(,"humidity":)" + sensorManager.getDhtHumidity() +
+        R"(,"heatIndex":)" + sensorManager.getHeatIndex() +
+        "}";
     Serial.println(espOutput);
     server.send(200, "application/json", espOutput);
 }
@@ -93,17 +93,19 @@ void handleSetAlarmState()
     }
 }
 
-void handleTestAlarm() 
+void handleTestAlarm()
 {
     alarmDuringTest = true;
     server.send(200, "text/plain", "OK");
 }
 
-bool ManageWifi::isAlarmDuringTest() {
+bool ManageWifi::isAlarmDuringTest()
+{
     return alarmDuringTest;
 }
 
-void ManageWifi::stopAlarmTest() {
+void ManageWifi::stopAlarmTest()
+{
     alarmDuringTest = false;
 }
 
