@@ -43,7 +43,13 @@ bool ManageWifi::setupWifiConnection()
     }
     Serial.print("IP Address: ");
     Serial.println(WiFi.localIP());
+
+    const char *headerKeys[] = {"time", "state"};
+    size_t headerKeysSize = sizeof(headerKeys) / sizeof(char *);
+    server.collectHeaders(headerKeys, headerKeysSize);
+
     server.begin();
+
     return true;
 }
 
@@ -68,29 +74,37 @@ void handleGetESPData()
 }
 void handleSetAlarm()
 {
-    if (server.hasArg("time"))
+    if (server.method() != HTTP_POST)
     {
-        server.send(200, "text/plain", "Alarm set to" + server.arg("time"));
-        lcdManager.printTextLcd("New request!\nAlarm is set to " + server.arg("time") + "\nFrom IP " + server.client().remoteIP().toString(), 1);
-        wifiTimeManager.saveAlarmTime(server.arg("time"));
+        server.send(400, "text/plain", "USE POST");
+        return;
     }
-    else
+    if (!server.hasHeader("time"))
     {
-        server.send(400, "text/plain", "NO ARG \"TIME\"");
+        server.send(400, "text/plain", "NO HEADER TIME");
+        return;
     }
+
+    server.send(200, "text/plain", "TIME SET TO:" + server.header("time"));
+    lcdManager.printTextLcd("New request!\nAlarm is set to " + server.header("time") + "\nFrom IP " + server.client().remoteIP().toString(), 1);
+    wifiTimeManager.saveAlarmTime(server.header("time"));
 }
 
 void handleSetAlarmState()
 {
-    if (server.hasArg("state"))
+    if (server.method() != HTTP_POST)
     {
-        server.send(200, "text/plain", "New state: " + server.arg("state"));
-        wifiTimeManager.setAlarmState(server.arg("state").toInt());
+        server.send(400, "text/plain", "USE POST");
+        return;
     }
-    else
+    if (!server.hasHeader("state"))
     {
-        server.send(400, "text/plain", "NO ARG \"STATE\"");
+        server.send(400, "text/plain", "NO HEADER STATE");
+        return;
     }
+
+    wifiTimeManager.setAlarmState(server.header("state").toInt());
+    server.send(200, "text/plain", "New state: " + server.header("state"));
 }
 
 void handleTestAlarm()
