@@ -51,6 +51,7 @@ void setup()
     mainTimeManager.setupNtp();
     mainLcdManager.clearLcd();
     mainLcdManager.printTextLcd("IP: " + wifiManager.getLocalIp(), 1);
+    delay(500);
     wifiManager.setupServerHandling();
     mainSensorManager.setupSensors();
     manageOta.setupOta();
