@@ -88,7 +88,7 @@ void ManageLcd::refreshLcd()
     clearLcd();
     switch (lcdMode)
     {
-    case 4:
+    case 4 ... INT_MAX:
     case 1:
         lcdMode = 1;
         display.setTextSize(1);
