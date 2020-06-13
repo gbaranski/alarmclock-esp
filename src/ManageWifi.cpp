@@ -123,6 +123,18 @@ void ManageWifi::stopAlarmTest()
     alarmDuringTest = false;
 }
 
+void getHeapSize()
+{
+    server.send(200, "text/plain", String(ESP.getHeapSize()));
+}
+
+void restartESP()
+{
+    ESP.getHeapSize();
+    server.send(200);
+    ESP.restart();
+}
+
 void ManageWifi::setupServerHandling()
 {
     server.onNotFound(handle404);
@@ -130,6 +142,8 @@ void ManageWifi::setupServerHandling()
     server.on("/setAlarm", handleSetAlarm);
     server.on("/setAlarmState", handleSetAlarmState);
     server.on("/testAlarm", handleTestAlarm);
+    server.on("/restartESP", restartESP);
+    server.on("/getHeapSize", getHeapSize);
 }
 
 String ManageWifi::getLocalIp()
