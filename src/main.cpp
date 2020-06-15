@@ -29,8 +29,8 @@ Ota manageOta;
 #endif
 
 unsigned long previousMillis = 0; // will store last time LED was updated
-const int modePushButton = 26;
-const int additionalPushButton = 27;
+const int modePushButton = 14;
+const int additionalPushButton = 12;
 const int sirenOutput = 23;
 
 void setup()
