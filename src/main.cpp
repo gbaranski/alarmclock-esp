@@ -2,6 +2,11 @@
 #include <Arduino.h>
 #endif
 
+#include "sounds/jingleWin.h"
+#include "XT_DAC_Audio.h"
+XT_Wav_Class JingleWinSong(JingleWin);
+XT_DAC_Audio_Class DacAudio(25, 0);
+
 #ifndef ALARMCLOCK_ESP_MANAGETIME_H
 #include "ManageTime.h"
 ManageTime mainTimeManager;
@@ -70,6 +75,9 @@ void loop()
     if (wifiManager.isAlarmDuringTest())
     {
         digitalWrite(sirenOutput, 1);
+        DacAudio.FillBuffer();              // Fill the sound buffer with data
+        if (JingleWinSong.Playing == false) // if not playing,
+            DacAudio.Play(&JingleWinSong);  //                play it, this will cause it to repeat and repeat...
     }
 
     int modeButtonState = digitalRead(modePushButton);
@@ -105,6 +113,10 @@ void loop()
             if (!isAlarmOff)
             {
                 digitalWrite(sirenOutput, 1);
+
+                DacAudio.FillBuffer();              // Fill the sound buffer with data
+                if (JingleWinSong.Playing == false) // if not playing,
+                    DacAudio.Play(&JingleWinSong);  //                play it, this will cause it to repeat and repeat...
             }
             else
             {
