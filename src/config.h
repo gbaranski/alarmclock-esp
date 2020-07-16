@@ -2,18 +2,10 @@
 // Created by Grzegorz Baranski on 01/04/2020.
 //
 
-#ifndef ALARMCLOCK_ESP_CONFIG_H
-#define ALARMCLOCK_ESP_CONFIG_H
-
-
-#ifndef wifiCredentials
-const char *ssid = "Nigeria";
+const char *ssid = "Nigeriav2";
 const char *password = "hondamsx125";
 const int serverPort = 80;
-const String ipAddress = "192.168.1.10:5000";
-#define wifiCredentials
-#endif
-
-#endif //ALARMCLOCK_ESP_CONFIG_H
-
-
+const String ipAddress = "192.168.1.10:8000";
+const char *websockets_server = "192.168.1.10"; //server adress and port
+const uint16_t websockets_port = 8000;
+const char *TOKEN_SERVER_URL = "http://192.168.1.10:8000/api/getToken";

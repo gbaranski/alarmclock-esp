@@ -3,3 +3,4 @@ CMakeListsPrivate.txt
 cmake-build-*/ 
 .vscode/
 .lib/
+src/secret.h

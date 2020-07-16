@@ -1,37 +1,31 @@
-#ifndef ARDUINO_H
 #include <Arduino.h>
-#endif
 
 #include "sounds/jingleWin.h"
 #include "XT_DAC_Audio.h"
 XT_Wav_Class JingleWinSong(JingleWin);
 XT_DAC_Audio_Class DacAudio(25, 0);
 
-#ifndef ALARMCLOCK_ESP_MANAGETIME_H
-#include "ManageTime.h"
-ManageTime mainTimeManager;
-#define ALARMCLOCK_ESP_MANAGETIME_H
+#ifndef ALARM_H
+#define ALARM_H
+#include "alarm.h"
 #endif
 
-#ifndef ALARMCLOCK_ESP_MANAGEWIFI_H
-#include "ManageWifi.h"
-ManageWifi wifiManager;
+#ifndef EXTLCD_H
+#define EXTLCD_H
+#include "extLcd.h"
 #endif
 
-#ifndef ALARMCLOCK_ESP_MANAGELCD_H
-#include <ManageLcd.h>
-ManageLcd mainLcdManager;
+#ifndef SENSOR_H
+#define SENSOR_H
+#include "sensor.h"
 #endif
 
-#ifndef ALARMCLOCK_ESP_MANAGESENSOR_H
-#include "ManageSensor.h"
-ManageSensor mainSensorManager;
+#ifndef WEBSOCKET_H
+#define WEBSOCKET_H
+#include "websocket.h"
 #endif
 
-#ifndef ALARMCLOCK_ESP_OTA_H
 #include "OTA.h"
-Ota manageOta;
-#endif
 
 unsigned long previousMillis = 0; // will store last time LED was updated
 const int modePushButton = 14;
@@ -42,24 +36,32 @@ void setup()
 {
 
     Serial.begin(9600);
+    Serial.setDebugOutput(true);
     pinMode(modePushButton, INPUT_PULLUP);
     pinMode(additionalPushButton, INPUT_PULLUP);
     pinMode(sirenOutput, OUTPUT);
     digitalWrite(sirenOutput, 0);
-    if (!mainLcdManager.setupLcd())
+    if (!setupLcd())
+
         while (true)
         {
             Serial.println("SSD1306 allocation failed");
             delay(1000);
         }
-    wifiManager.setupWifiConnection();
-    mainTimeManager.setupNtp();
-    mainLcdManager.clearLcd();
-    mainLcdManager.printTextLcd("IP: " + wifiManager.getLocalIp(), 1);
+    setupWebsocket();
+    while (!isWifiRunning())
+    {
+        Serial.println("Waiting for wifi...");
+        delay(100);
+    }
+    connectWebSocket();
+    setupNtp();
+    clearLcd();
+    // printTextLcd("IP: " + wifiManager.getLocalIp(), 1);
     delay(500);
-    wifiManager.setupServerHandling();
-    mainSensorManager.setupSensors();
-    manageOta.setupOta();
+    // wifiManager.setupServerHandling();
+    setupSensors();
+    setupOta();
 }
 
 bool lastModeButtonState = false;
@@ -69,23 +71,23 @@ unsigned long millisToStop;
 
 void loop()
 {
-    wifiManager.handleServer();
-    manageOta.handleOta();
+    webSocketLoop();
+    handleOta();
 
-    if (wifiManager.isAlarmDuringTest())
-    {
-        digitalWrite(sirenOutput, 1);
-        DacAudio.FillBuffer();              // Fill the sound buffer with data
-        if (JingleWinSong.Playing == false) // if not playing,
-            DacAudio.Play(&JingleWinSong);  //                play it, this will cause it to repeat and repeat...
-    }
+    // if (wifiManager.isAlarmDuringTest())
+    // {
+    //     digitalWrite(sirenOutput, 1);
+    //     DacAudio.FillBuffer();              // Fill the sound buffer with data
+    //     if (JingleWinSong.Playing == false) // if not playing,
+    //         DacAudio.Play(&JingleWinSong);  //                play it, this will cause it to repeat and repeat...
+    // }
 
     int modeButtonState = digitalRead(modePushButton);
 
     if (modeButtonState == LOW && !lastModeButtonState)
     {
         Serial.println("Pressed mode button");
-        mainLcdManager.changeLcdMode();
+        changeLcdMode();
         delay(200);
         lastModeButtonState = true;
     }
@@ -106,9 +108,9 @@ void loop()
     {
         lastAdditionalButtonState = false;
     }
-    if (mainTimeManager.getAlarmStateBoolean())
+    if (getAlarmStateBoolean())
     {
-        if (mainTimeManager.isNowAlarmTime())
+        if (isNowAlarmTime())
         {
             if (!isAlarmOff)
             {
@@ -133,12 +135,12 @@ void loop()
     if (millis() - previousMillis >= 1000)
     {
         previousMillis = millis();
-        mainTimeManager.updateTime();
-        mainLcdManager.refreshLcd();
-        if (wifiManager.isAlarmDuringTest())
-        {
-            wifiManager.stopAlarmTest();
-            digitalWrite(sirenOutput, 0);
-        }
+        updateTime();
+        refreshLcd();
+        // if (wifiManager.isAlarmDuringTest())
+        // {
+        //     wifiManager.stopAlarmTest();
+        //     digitalWrite(sirenOutput, 0);
+        // }
     }
 }

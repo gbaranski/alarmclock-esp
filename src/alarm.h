@@ -1,21 +1,7 @@
-//
-// Created by Grzegorz Baranski on 01/04/2020.
-//
-
-#include "ManageTime.h"
-
-#ifndef WSTRING_H
-#define WSTRING_H
-#include <WString.h>
-#endif
+#include <Arduino.h>
 
 #include <NTPClient.h>
 #include <WiFiUdp.h>
-
-#ifndef ALARMCLOCK_ESP_MANAGELCD_H
-#include <ManageLcd.h>
-ManageLcd timeLcdManager;
-#endif
 
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "0.pl.pool.ntp.org", 7200, 60000);
@@ -23,17 +9,17 @@ NTPClient timeClient(ntpUDP, "0.pl.pool.ntp.org", 7200, 60000);
 String alarmTime = "07:45"; // default alarm time
 bool alarmState = false;
 
-void ManageTime::setupNtp()
+void setupNtp()
 {
     timeClient.begin();
 }
 
-void ManageTime::updateTime()
+void updateTime()
 {
     timeClient.update();
 }
 
-String ManageTime::getTime()
+String getCurrentTime()
 {
     return timeClient.getFormattedTime();
 }
@@ -65,7 +51,7 @@ int parseTimeToTotalSeconds(String time)
     return parseTimeToHour(time).toInt() * 3600 + parseTimeToMinute(time).toInt() * 60 + parseTimeToSeconds(time).toInt();
 }
 
-void ManageTime::saveAlarmTime(String data)
+void saveAlarmTime(String data)
 {
     Serial.println("fulltime" + data);
     Serial.println("Hour:" + parseTimeToHour(data));
@@ -73,12 +59,12 @@ void ManageTime::saveAlarmTime(String data)
     alarmTime = data;
 }
 
-String ManageTime::getAlarmTime()
+String getAlarmTime()
 {
     return alarmTime;
 }
 
-String ManageTime::getFormattedRemainingTime()
+String getFormattedRemainingTime()
 {
     int totalRemainingSeconds = parseTimeToTotalSeconds(alarmTime + ":00") - parseTimeToTotalSeconds(timeClient.getFormattedTime());
     int remainingSeconds = totalRemainingSeconds % 60;
@@ -93,7 +79,7 @@ String ManageTime::getFormattedRemainingTime()
     }
     return formatDoubleDigit(String(remainingHours)) + ":" + formatDoubleDigit(String(remainingMinutes)) + ":" + formatDoubleDigit(String(remainingSeconds));
 }
-bool ManageTime::isNowAlarmTime()
+bool isNowAlarmTime()
 {
     if (timeClient.getHours() == parseTimeToHour(alarmTime).toInt() && timeClient.getMinutes() == parseTimeToMinute(alarmTime).toInt())
     {
@@ -101,7 +87,7 @@ bool ManageTime::isNowAlarmTime()
     }
     return false;
 }
-String ManageTime::getAlarmState()
+String getAlarmState()
 {
     if (alarmState)
     {
@@ -112,11 +98,11 @@ String ManageTime::getAlarmState()
         return "OFF";
     }
 }
-int ManageTime::getAlarmStateBoolean()
+int getAlarmStateBoolean()
 {
     return alarmState;
 }
-void ManageTime::setAlarmState(bool newAlarmState)
+void setAlarmState(bool newAlarmState)
 {
     alarmState = newAlarmState;
 }

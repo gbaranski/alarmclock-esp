@@ -2,7 +2,6 @@
 // Created by Grzegorz Baranski on 10/04/2020.
 //
 
-#include "ManageSensor.h"
 #include <DHT.h>
 #include <Adafruit_Sensor.h>
 
@@ -11,27 +10,27 @@
 
 DHT dht(DHTPIN, DHTTYPE);
 
-void ManageSensor::setupSensors()
+void setupSensors()
 {
     dht.begin();
 }
 
-float ManageSensor::getDhtTemperature()
+float getDhtTemperature()
 {
     return dht.readTemperature();
 }
 
-float ManageSensor::getDhtHumidity()
+float getDhtHumidity()
 {
     return dht.readHumidity();
 }
 
-float ManageSensor::getHeatIndex()
+float getHeatIndex()
 {
     return dht.computeHeatIndex(dht.readTemperature(), dht.readHumidity(), false);
 }
 
-void ManageSensor::refreshDht()
+void refreshDht()
 {
     dht.readTemperature();
 }

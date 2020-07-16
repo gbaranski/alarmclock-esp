@@ -2,14 +2,7 @@
 // Created by Grzegorz Baranski on 02/04/2020.
 //
 
-#include "ManageLcd.h"
-#include <WString.h>
-
-#ifndef ALARMCLOCK_ESP_MANAGETIME_H
-#include "ManageTime.h"
-ManageTime lcdTimeManager;
-#endif
-
+#include <Arduino.h>
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -31,16 +24,21 @@ ManageTime lcdTimeManager;
 #define OLED_RESET -1
 #endif
 
-#ifndef ALARMCLOCK_ESP_MANAGESENSOR_H
-#include "ManageSensor.h"
-ManageSensor lcdSensorManager;
+#ifndef ALARM_H
+#define ALARM_H
+#include "alarm.h"
+#endif
+
+#ifndef SENSOR_H
+#define SENSOR_H
+#include "sensor.h"
 #endif
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 int lcdMode = 1;
 
-bool ManageLcd::setupLcd()
+bool setupLcd()
 {
     Wire.begin(5, 4);
     if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C))
@@ -57,15 +55,8 @@ bool ManageLcd::setupLcd()
     delay(1000);
     return true;
 }
-void ManageLcd::printTextLcd(String lcdText, int fontSize)
-{
-    clearLcd();
-    display.setTextSize(fontSize);
-    display.print(lcdText);
-    display.display();
-}
 
-void ManageLcd::clearLcd()
+void clearLcd()
 {
     display.setTextColor(WHITE);
     display.setCursor(0, 0);
@@ -73,17 +64,25 @@ void ManageLcd::clearLcd()
     display.clearDisplay();
 }
 
-void ManageLcd::changeLcdMode()
+void printTextLcd(String lcdText, int fontSize)
+{
+    clearLcd();
+    display.setTextSize(fontSize);
+    display.print(lcdText);
+    display.display();
+}
+
+void changeLcdMode()
 {
     lcdMode++;
 }
 
-int ManageLcd::getLcdMode()
+int getLcdMode()
 {
     return lcdMode;
 }
 
-void ManageLcd::refreshLcd()
+void refreshLcd()
 {
     clearLcd();
     switch (lcdMode)
@@ -92,17 +91,17 @@ void ManageLcd::refreshLcd()
     case 1:
         lcdMode = 1;
         display.setTextSize(1);
-        display.println("Current time      " + lcdTimeManager.getAlarmState());
+        display.println("Current time      " + getAlarmState());
         display.setTextSize(2);
-        display.println(lcdTimeManager.getTime());
+        display.println(getCurrentTime());
         break;
     case 2:
         display.setTextSize(1);
         display.println("Remaining time");
         display.setTextSize(2);
-        if (lcdTimeManager.getAlarmStateBoolean())
+        if (getAlarmStateBoolean())
         {
-            display.println(lcdTimeManager.getFormattedRemainingTime());
+            display.println(getFormattedRemainingTime());
         }
         else
         {
@@ -113,11 +112,11 @@ void ManageLcd::refreshLcd()
     case 3:
         display.setTextSize(1);
         display.cp437(true);
-        display.println("Alarm time: " + lcdTimeManager.getAlarmTime());
+        display.println("Alarm time: " + getAlarmTime());
         display.write(167);
-        display.println("Temperature: " + String(lcdSensorManager.getDhtTemperature()));
-        display.println("Humidity: " + String(lcdSensorManager.getDhtHumidity()) + "%");
-        display.println("Heat index:" + String(lcdSensorManager.getHeatIndex()));
+        display.println("Temperature: " + String(getDhtTemperature()));
+        display.println("Humidity: " + String(getDhtHumidity()) + "%");
+        display.println("Heat index:" + String(getHeatIndex()));
         break;
     }
     display.display();
