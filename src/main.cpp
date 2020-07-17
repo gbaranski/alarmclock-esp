@@ -74,13 +74,13 @@ void loop()
     webSocketLoop();
     handleOta();
 
-    // if (wifiManager.isAlarmDuringTest())
-    // {
-    //     digitalWrite(sirenOutput, 1);
-    //     DacAudio.FillBuffer();              // Fill the sound buffer with data
-    //     if (JingleWinSong.Playing == false) // if not playing,
-    //         DacAudio.Play(&JingleWinSong);  //                play it, this will cause it to repeat and repeat...
-    // }
+    if (isAlarmDuringTest())
+    {
+        digitalWrite(sirenOutput, 1);
+        DacAudio.FillBuffer();              // Fill the sound buffer with data
+        if (JingleWinSong.Playing == false) // if not playing,
+            DacAudio.Play(&JingleWinSong);  //                play it, this will cause it to repeat and repeat...
+    }
 
     int modeButtonState = digitalRead(modePushButton);
 
@@ -137,10 +137,10 @@ void loop()
         previousMillis = millis();
         updateTime();
         refreshLcd();
-        // if (wifiManager.isAlarmDuringTest())
-        // {
-        //     wifiManager.stopAlarmTest();
-        //     digitalWrite(sirenOutput, 0);
-        // }
+        if (isAlarmDuringTest())
+        {
+            setAlarmDuringTest(false);
+            digitalWrite(sirenOutput, 0);
+        }
     }
 }

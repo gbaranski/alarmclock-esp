@@ -43,11 +43,12 @@ WiFiMulti WiFiMulti;
 WebSocketsClient webSocket;
 
 void connectWebSocket();
+boolean alarmDuringTest = 0;
 
 void handleMessage(uint8_t payload[], size_t length)
 {
-    uint8_t getData[8] = {71, 69, 84, 95, 68, 65, 84, 65};
-    if (checkArrays(payload, getData, length, 8))
+    String payloadString = formatPayloadToString(payload, length);
+    if (payloadString == "GET_DATA")
     {
         String espOutput =
             R"({"currentTime":")" + getCurrentTime() +
@@ -61,10 +62,32 @@ void handleMessage(uint8_t payload[], size_t length)
         webSocket.sendTXT(espOutput);
         Serial.println("[WSc] Received GET_DATA");
     }
+    else if (payloadString.substring(0, payloadString.length() - 5) == "SET_TIME=")
+    {
+        String time = payloadString.substring(payloadString.length(), payloadString.length() - 5);
+        Serial.println("[WSc] Received time: " + time);
+        saveAlarmTime(time);
+    }
+    else if (payloadString.substring(0, payloadString.length() - 1) == "SET_STATE=")
+    {
+        String state = payloadString.substring(payloadString.length(), payloadString.length() - 1);
+        Serial.println("[WSc] Received state: " + state);
+        setAlarmState(state);
+    }
+    else if (payloadString == "TEST_SIREN")
+    {
+        alarmDuringTest = 1;
+        Serial.println("[WSc] Testing alarm");
+    }
+    else if (payloadString == "RESTART")
+    {
+        Serial.println("[WSc] Rebooting");
+        ESP.restart();
+    }
     else
     {
-        Serial.println("Unknown");
-    };
+        Serial.println("[WSc] Unknown request");
+    }
 }
 
 void webSocketEvent(WStype_t type, uint8_t *payload, size_t length)
@@ -81,8 +104,6 @@ void webSocketEvent(WStype_t type, uint8_t *payload, size_t length)
         webSocket.sendTXT("Connected");
         break;
     case WStype_TEXT:
-        Serial.printf("[WSc] get text: %s\n", payload);
-        Serial.println(length);
         handleMessage(payload, length);
         break;
     case WStype_BIN:
@@ -169,4 +190,14 @@ boolean isWifiRunning()
 void webSocketLoop()
 {
     webSocket.loop();
+}
+
+boolean isAlarmDuringTest()
+{
+    return alarmDuringTest;
+}
+
+void setAlarmDuringTest(bool state)
+{
+    alarmDuringTest = state;
 }
